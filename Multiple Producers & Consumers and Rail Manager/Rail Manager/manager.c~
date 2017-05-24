@@ -1,5 +1,12 @@
 /***************************************************************
 Operating Systems Lab Assignment 5 : Rail Manager
+
+Name : Kumar Ayush
+Roll No. 13CS10058
+
+Name : Varun Rawal
+Roll No. 13CS10059
+
 ****************************************************************/
 
 // Manager Program : creates and ensures Synchronization between trains crossing the '#' Junction 

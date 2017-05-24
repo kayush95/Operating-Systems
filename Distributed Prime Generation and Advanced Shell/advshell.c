@@ -1,34 +1,9 @@
 /***************************************************************
-Operating Systems Lab Assignment 3 : Problem 2
-
-Name : Kumar Ayush
-Roll No. 13CS10058
-
-Name : Varun Rawal
-Roll No. 13CS10059
+Operating Systems Lab Assignment 2 : Problem 2
 
 ****************************************************************/
 
-// TERMINAL MIRRORING CLIENT
-
-// *** --> Important tricks applied
-
-#include <stdio.h>
-#include <string.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
-#include <unistd.h>
-#include <signal.h>
-#include <time.h>
-#include <bits/stdc++.h>
-
-using namespace std;
-
-#define MAX_SIZE 5024
-#define MSSG_Q_KEY 200
-#define COUPLE 10
-#define UNCOUPLE 20
-#define BROADCAST 30
+// ADVANCED SHELL
 
 
 #include <stdio.h>
@@ -50,19 +25,19 @@ using namespace std;
 
 #define disk_blk_size 512
 #define file_blk_size 1024
-#define MAX_SIZE 5024
+#define MAX_SIZE 1024
 extern char **environ ;
 
-static struct termios old, _new_;
+static struct termios old, new;
 
-/* Initialize _new_ terminal i/o settings */
+/* Initialize new terminal i/o settings */
 void initTermios(int echo) 
 {
   tcgetattr(0, &old); /* grab old terminal i/o settings */
-  _new_ = old; /* make _new_ settings same as old settings */
-  _new_.c_lflag &= ~ICANON; /* disable buffered i/o */
-  _new_.c_lflag &= echo ? ECHO : ~ECHO; /* set echo mode */
-  tcsetattr(0, TCSANOW, &_new_); /* use these _new_ terminal i/o settings now */
+  new = old; /* make new settings same as old settings */
+  new.c_lflag &= ~ICANON; /* disable buffered i/o */
+  new.c_lflag &= echo ? ECHO : ~ECHO; /* set echo mode */
+  tcsetattr(0, TCSANOW, &new); /* use these new terminal i/o settings now */
 }
 
 /* Restore old terminal i/o settings */
@@ -93,29 +68,21 @@ char getche(void)
   return getch_(1);
 }
 
-bool startsWith(const char *pre, const char *str)
+int startsWith(char *pre,char *str)
 {
     size_t lenpre = strlen(pre),
            lenstr = strlen(str);
-    return lenstr < lenpre ? false : strncmp(pre, str, lenpre) == 0;
+    return lenstr < lenpre ? 0 : strncmp(pre, str, lenpre) == 0;
 }
 
-int CHILD_PID;
 
-bool coupled=false;
 
 char next_command[MAX_SIZE]="";
 
 char history_file_path[MAX_SIZE];	// stores the full pathname of the command history file
 
-int clrscreen();
-
 void loop_SHELL();
-char* run(char**);
-void broadcastSelfMirror(char*);
-void requestForUncouple();
-void requestForCouple();
-void waitForMirrors();
+void run(char**);
 
 void searchHandler(int sig)
 {
@@ -125,7 +92,7 @@ void searchHandler(int sig)
 
 		if(_inp_ == NULL)
 		{
-			cout << "Cannot open file ! Terminating...\n";
+			printf("Cannot open file ! Terminating...\n");
 			return;
 		}
 
@@ -236,7 +203,7 @@ int showEnvironmentVariables()
         char *s = *environ;
         for (; s; i++) 
         {
-        	cout<<s<<endl;
+            printf("%s\n", s);
             s = *(environ+i);
         }         
 	return 1;
@@ -247,11 +214,11 @@ int showWorkingDirectory()
 	char cwd[MAX_SIZE];
 
 	if(getcwd(cwd, MAX_SIZE) != NULL)
-		cout<<cwd<<endl;
+		printf("%s\n",cwd);
 		
 	else
 	{
-		cout << "Command Prompt error ! \n ";
+		printf("Command Prompt error ! \n ");
 		return -1;
 	}
 
@@ -264,7 +231,7 @@ int updateHistory(char* s)
 
 	if(_out_ == NULL)
 	{
-		cout << "Cannot update history ! \n";
+		printf("Cannot update history ! \n");
 		return -1;
 	}
 
@@ -325,16 +292,16 @@ int listContents(char* s)
 		if(directory == NULL)
 		{
 		    perror("");
-		    return -1;
+		    return;
 		}
 		// hidden files start with '.' . We don't need to print them
 		while((dir_entry = readdir(directory)) != NULL)
 		{
 		    if(dir_entry->d_name[0] != '.')
-		    	cout << dir_entry->d_name << "\t";
+		        printf("%s\t",dir_entry->d_name);
 		    
 		}   
-		cout << endl;
+		printf("\n");
 
 	}
 	else if(strcmp(s,"-l")==0)
@@ -344,7 +311,7 @@ int listContents(char* s)
 		if(directory == NULL)
 		{
 		    perror("");
-		    return -1;
+		    return;
 		}
 		//calculate the total block size of all the files which are not hidden
 		total_blocks_size = 0;
@@ -366,11 +333,11 @@ int listContents(char* s)
 		if(directory == NULL)
 		{
 		    perror("");
-		    return -1;
+		    return;
 		}
 		//total block size have to be multiplied by the fraction (block_sizeof_disk/block_sizeof_file) .
 		total_blocks_size = (total_blocks_size * disk_blk_size)/file_blk_size;
-		cout << "total " << total_blocks_size << endl;
+		printf("total %lu\n",total_blocks_size);
 		//print the statistics for files which are not hidden
 		while((dir_entry = readdir(directory)) != NULL)
 		{
@@ -398,41 +365,29 @@ int listContents(char* s)
 		            
 		            int per;
 		            for(per = 0 ; per < 10 ; per++)
-		                cout << permission[per] ;
+		                printf("%c",permission[per]) ;
 
 		            //print number of links to this file, the user name (acc. to user id of the file),
 		            //the group name (acc. to group id of the file).
-					cout << " " << (int)dir_stat.st_nlink << " " << getpwuid(dir_stat.st_uid)->pw_name <<"\t"<<getgrgid(dir_stat.st_gid)->gr_name <<"\t";
-		       
+		            printf(" %d %s\t%s\t",(int)dir_stat.st_nlink,getpwuid(dir_stat.st_uid)->pw_name,getgrgid(dir_stat.st_gid)->gr_name);
 		            //print the size of the file.
-		            cout << dir_stat.st_size << "\t" ;  
+		            printf("%5lu\t",dir_stat.st_size);   
 		            time_t t = dir_stat.st_mtime;
 		            struct tm lt;
 		            localtime_r(&t, &lt);
 		            char timbuf[80];
 		            strftime(timbuf, sizeof(timbuf), "%b %d %H:%M", &lt);       
 		            //print the last modified time of the file.
-		            cout << timbuf <<"\t" << dir_entry->d_name << endl;
+		            printf("%s\t%s\n",timbuf,dir_entry->d_name);
 		        }
 		    }
 		}       		
 	}
 	else
-		cout << "Sorry ! This shell supports only the following \n ls\nls -l\n";
+		printf("Sorry ! This shell supports only the following \n ls\nls -l\n");
 	closedir(directory);
 
 	return 1;
-}
-
-int listWordCount(char* s)
-{
-	if(s==NULL)
-		system("wc");
-	else if(strcmp(s,"-l")==0)
-		system("wc -l");
-
-	return 1;
-
 }
 
 int showHistory(char* s)
@@ -445,14 +400,14 @@ int showHistory(char* s)
 
 		if(_inp_ == NULL)
 		{
-			cout << "Cannot open file ! Terminating...\n";
+			printf("Cannot open file ! Terminating...\n");
 			return -1;
 		}
 
 		char sent[MAX_SIZE];
 				
 		while(fgets(sent, MAX_SIZE, _inp_)!=NULL)
-			cout<<sent;
+			printf("%s",sent);
 		
 		fclose(_inp_);
 	}
@@ -463,7 +418,7 @@ int showHistory(char* s)
 
 		if(hist_arg==0)
 		{
-			cout << "Please enter an integer argument as : history <int_arg>\n";
+			printf("Please enter an integer argument as : history <int_arg>\n");
 			return -1;
 		}
 		else
@@ -473,7 +428,7 @@ int showHistory(char* s)
 
 				if(_inp_ == NULL)
 				{
-					cout << "Cannot open file ! Terminating...\n";
+					printf("Cannot open file ! Terminating...\n");
 					return -1;
 				}
 
@@ -487,7 +442,7 @@ int showHistory(char* s)
 				{
 					count++;
 					if(count>tot_count - hist_arg)
-						cout<<sent;
+						printf("%s",sent);
 				}
 
 				fclose(_inp_);
@@ -500,19 +455,13 @@ int showHistory(char* s)
 void executeCommand(char** s)
 {
 
-    int pid_3 = fork();
+    int pid = fork();
     int ret;
 
-	if(pid_3 == 0) 
+	if(pid == 0) 
 		{
-			
-			int fd = open("out.txt",O_RDWR | O_TRUNC | O_CREAT, S_IRUSR | S_IRGRP | S_IROTH | S_IWUSR | S_IWGRP | S_IWOTH);
-			close(1); // close the stdout file descriptor
-			dup2(fd,1);	// replace the stdout by this file "out.txt"
-			close(fd);
-
 			ret=execvp(s[0],s);
-			if (ret==-1) cout << "Invalid Command !\n";
+			printf("Invalid command !\n");
 			exit(0);
 		}
 	
@@ -522,8 +471,7 @@ void executeCommand(char** s)
 		count++;
 
 	if(strcmp(s[count-1],"&")==0) ;
-	else waitpid(pid_3,NULL,0);
-	
+	else wait(NULL);
 
 }
 
@@ -615,7 +563,6 @@ gcc -o c trial3.c
 // SIMILAR TO THE ABOVE (NOW COMMENTED OUT) BINARY PIPED COMMAND PAIR, THIS CODE STANDS FOR N-ARY PIPED COMMAND GROUP, IN GENERAL
 void executePipedCommand(char* command_group,int commCount)
 {
-	
 	//printf("commCount = %d\n", commCount);
 
 	char* command[commCount];
@@ -683,17 +630,10 @@ void executePipedCommand(char* command_group,int commCount)
 		{
 			// 0th process
 
-			//close(fd[y][0]);//close the read end
-			//close(1);	// close stdout file
-			dup2(fd[y][1],1);
-			//close(fd[y][1]);
-
-			int i;
-			for(i=0;i<commCount-1;i++)
-			{
-				close(fd[i][0]);
-				close(fd[i][1]);
-			}
+			close(fd[y][0]);//close the read end
+			close(1);	// close stdout file
+			dup(fd[y][1]);
+			close(fd[y][1]);
 		
 		}
 		else if(y!=commCount-1)
@@ -701,66 +641,41 @@ void executePipedCommand(char* command_group,int commCount)
 
 			// process[y] is the writer for pipe[y]
 
-			//close(fd[y][0]);//close the read end
-			//close(1);	// close stdout file
-			dup2(fd[y][1],1);
-			//close(fd[y][1]);
+			close(fd[y][0]);//close the read end
+			close(1);	// close stdout file
+			dup(fd[y][1]);
+			close(fd[y][1]);
 
 
 
 			// process[y] is the reader for pipe[y-1]
 
-			//close(fd[y-1][1]);//close the writer end
-			//close(0);	// close stdin file
-			dup2(fd[y-1][0],0);
-			//close(fd[y-1][0]);
-
-			int i;
-			for(i=0;i<commCount-1;i++)
-			{
-				close(fd[i][0]);
-				close(fd[i][1]);
-			}
+			close(fd[y-1][1]);//close the writer end
+			close(0);	// close stdin file
+			dup(fd[y-1][0]);
+			close(fd[y-1][0]);
 
 		}
 		else if (y == commCount-1)
 		{
-			//close(fd[y-1][1]);//close the writer end
-			//close(0);	// close stdin file
-			dup2(fd[y-1][0],0);
-			//close(fd[y-1][0]);
-
-			int i;
-			for(i=0;i<commCount-1;i++)
-			{
-				close(fd[i][0]);
-				close(fd[i][1]);
-			}
+			close(fd[y-1][1]);//close the writer end
+			close(0);	// close stdin file
+			dup(fd[y-1][0]);
+			close(fd[y-1][0]);
 		}
 		else
 			printf("Impossible value of y : %d !!!\n",y);
-
-		
 
 		run(comm_args[y]);
 		exit(0);
 
 	}
 
-
 }
-int i;
-	for(i=0;i<commCount-1;i++)
-			{
-				close(fd[i][0]);
-				close(fd[i][1]);
-			}
 
 
 	for(y=0;y<commCount;y++)
-		waitpid(pid[y],NULL,0);
-
-
+		wait(NULL);
 
 }
 
@@ -794,7 +709,7 @@ void executeRedirectedCommand(char* red_command,char direct)	// direct represent
 	
 		if(fd==-1)
 		{
-			cout << "Redirection failed !!!\n";
+			printf("Redirection failed !!!\n");
 			return;
 		}
 		
@@ -808,7 +723,7 @@ void executeRedirectedCommand(char* red_command,char direct)	// direct represent
 	
 		if(fd==-1)
 		{
-			cout << "Redirection failed !!!\n";
+			printf("Redirection failed !!!\n");
 			return;
 		}
 		
@@ -833,7 +748,7 @@ void executeRedirectedCommand(char* red_command,char direct)	// direct represent
 		exit(0);
 	}
 
-	waitpid(pid,NULL,0);
+	wait(NULL);
 
 }
 
@@ -868,7 +783,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 	
 		if(fd==-1)
 		{
-			cout << "Write Redirection failed !!!\n";
+			printf("Write Redirection failed !!!\n");
 			return;
 		}
 		
@@ -881,7 +796,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 	
 		if(fd==-1)
 		{
-			cout << "Read Redirection failed !!!\n";
+			printf("Read Redirection failed !!!\n");
 			return;
 		}
 		
@@ -895,7 +810,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 	
 		if(fd==-1)
 		{
-			cout << "Read Redirection failed !!!\n";
+			printf("Read Redirection failed !!!\n");
 			return;
 		}
 		
@@ -908,7 +823,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 	
 		if(fd==-1)
 		{
-			cout << "Write Redirection failed !!!\n";
+			printf("Write Redirection failed !!!\n");
 			return;
 		}
 		
@@ -917,7 +832,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 		close(fd);
 	}
 	else
-		cout << "Impossible ERROR !\n";
+		printf("Impossible ERROR !\n");
 
 	char **args = (char**)malloc(MAX_SIZE*sizeof(char*));
 
@@ -935,7 +850,7 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 		exit(0);
 	}
 
-	waitpid(pid,NULL,0);
+	wait(NULL);
 
 }
 
@@ -947,27 +862,10 @@ void executeBidirectedCommand(char* red_command,int mode)	// direct represents t
 
 ***********************/
 
-struct cout_redirect {
-    cout_redirect(streambuf* new_buffer) : old(cout.rdbuf(new_buffer))
-  		  { }
-
-    ~cout_redirect( ) 
-    {
-        cout.rdbuf( old );
-    }
-
-private:
-    streambuf * old;
-};
-
-char* run(char** args)
+void run(char** args)
 {
-		stringstream buffer;
-		buffer.str("");
-		cout_redirect* RD_ptr= new cout_redirect(buffer.rdbuf());
-
 	if(args==NULL)
-			return strdup("");
+			return;
 
 		if(strcmp(args[0],"clear")==0 && args[1]==NULL)
 			clrscreen();
@@ -979,101 +877,49 @@ char* run(char** args)
 			showEnvironmentVariables();
 
 		else if(strcmp(args[0],"exit")==0 && args[1]==NULL)
-		{
-			if(coupled)
-				requestForUncouple();
-			sleep(1);
 			exit(0);
-		}
 
 		else if(strcmp(args[0],"pwd")==0 && args[1]==NULL)
 		{
 			if (showWorkingDirectory() == -1)
-				cout << "Error showing current directory !\n" ;
+				printf("Error showing current directory !\n");
 		}
 
 		else if(strcmp(args[0],"cd")==0)
 		{
 			if(changeDirectory(args[1])==-1)
-				cout << "ERROR : No such directory exists!\n" ;
+				printf("ERROR : No such directory exists!\n");
 		}
 		
 		else if(strcmp(args[0],"mkdir")==0)
 		{
 			if(args[1]==NULL)
-				cout << "Invalid Command ! Please enter : \n mkdir <dir_name>\n" ;
+				printf("Invalid Command ! Please enter : \n mkdir <dir_name>\n");
 			else if(makeDirectory(args[1])==-1)
-				cout << "ERROR in creating directory !\n" ;
+				printf("ERROR in creating directory !\n");
 		}
 
 		else if(strcmp(args[0],"rmdir")==0)
 		{
 			if(args[1]==NULL)
-				cout << "Invalid Command ! Please enter : \n rmdir <dir_name>\n" ;
+				printf("Invalid Command ! Please enter : \n rmdir <dir_name>\n");
 			else if(removeDirectory(args[1])==-1)
-				cout << "ERROR in deleting directory !\n";
+				printf("ERROR in deleting directory !\n");
 		}
 
 		else if(strcmp(args[0],"history")==0)
 		{
 			if(showHistory(args[1])==-1)
-				cout << "ERROR ! Trouble showing history !\n" ;
+				printf("ERROR ! Trouble showing history !\n");
 		}
-		else if(strcmp(args[0],"couple")==0)
-			requestForCouple();
-		else if(strcmp(args[0],"uncouple")==0)
-			requestForUncouple();
 		
-		else 
-			{
-				executeCommand(args);
-
-				int fd = open("out.txt",O_RDONLY, S_IRUSR | S_IRGRP | S_IROTH | S_IWUSR | S_IWGRP | S_IWOTH);
-				
-				char readBUF[MAX_SIZE];
-
-				bzero(readBUF,sizeof(readBUF));
-
-				read(  fd,  readBUF,  sizeof(readBUF) );
-
-				cout << readBUF;
-			}
-
-		delete RD_ptr;
-		cout << buffer.str();
-		return strdup(buffer.str().c_str()); // return the command output
+		else executeCommand(args);
 }
 
-/*
-void sigchld_handler (int signum)
-{
-  int pid, status, serrno;
-  serrno = errno;
-  while (1)
-    {
-      pid = waitpid (CHILD_PID, &status, WNOHANG);
-      if (pid < 0)
-        {
-          perror ("waitpid");
-          break;
-        }
-      if (pid == 0) // i.e. child still exists
-        break;
-      else if(pid==CHILD_PID)
-      {
-      	// i.e. if child terminated, this means uncoupling occurred
-      	coupled=false;
-      }
-    }
-  errno = serrno;
-  requestForUncouple();
-}
-*/
 void loop_SHELL()
 {
 	FILE* _io_=fopen("commands.txt","a+");
 
-	//signal(SIGCHLD, sigchld_handler);
 	signal(SIGQUIT,searchHandler);	// register the installed Signal Handler
 	
 	realpath("commands.txt", history_file_path);
@@ -1086,10 +932,10 @@ void loop_SHELL()
 		FILE* _out_;
 
 		if(getcwd(cwd, MAX_SIZE) != NULL)
-			cout << " " << cwd << " > ";	
+			printf(" %s > ",cwd);	
 		else
 		{
-			cout << "Command Prompt error ! Terminating...\n ";
+			printf("Command Prompt error ! Terminating...\n ");
 			exit(1);
 		}
 
@@ -1104,14 +950,12 @@ void loop_SHELL()
 				continue;
 		}
 	
-		char save_buf[MAX_SIZE];	
-		strcpy(save_buf,buf);	// save the prompt for broadcasting later
 
 		if(strlen(buf)<=1)
 			continue;
 
 		if(updateHistory(buf)==-1)
-			cout << "Trouble updating History !\n" ;
+			printf("Trouble updating History !\n");
 
 		int x=0,pipeCounter=0;
 
@@ -1174,149 +1018,12 @@ void loop_SHELL()
 			*p=strtok(NULL, " \t\n");
 		}
 
-		char* broadcast_output = run(args);		
-
-		// Before broadcasting, just check whether child has died of uncoupling
-
-		if(waitpid(CHILD_PID,NULL,WNOHANG)==CHILD_PID)	// i.e. if child has exited
-			{
-				requestForUncouple();
-			}
-
-		if(coupled)	
-		{
-			strcat(save_buf,"\n");
-			strcat(save_buf,broadcast_output);	// append the command output to the command before broadcasting
-			broadcastSelfMirror(save_buf);
-		}
+		run(args);		
 	}
 }
 
 
-struct mssg
-{
-	long mtype;
-	char mtext[MAX_SIZE];
-};
-
-
-
-
-
-void broadcastSelfMirror(char* broadcast)
-{
-	//cout << "Broadcasting : " << broadcast << " \n";
-	if(!coupled)
-	{
-		cout<<"Error : Not coupled to the Terminal Mirroring Server!\n";
-		return;
-	}
-	struct mssg buffer;
-	int mssgQ_ID=msgget((key_t)MSSG_Q_KEY,IPC_CREAT|0666);
-
-	// Try to uncouple from Terminal Mirroring SERVER
-	buffer.mtype=BROADCAST;
-	strcpy(buffer.mtext,broadcast);
-	msgsnd(mssgQ_ID,&buffer,sizeof(buffer),0);
-}
-
-
-
-
-void requestForUncouple()
-{
-	if(!coupled)
-	{
-		cout<<"Error : Already uncoupled !\n";
-		return;
-	}
-	struct mssg buffer;
-	int mssgQ_ID=msgget((key_t)MSSG_Q_KEY,IPC_CREAT|0666);
-
-	// Try to uncouple from Terminal Mirroring SERVER
-	buffer.mtype=UNCOUPLE;
-	msgsnd(mssgQ_ID,&buffer,sizeof(buffer),0);
-
-	// ***
-
-	//receive (wait for) only the message specifically meant for own pid
-	//msgrcv(mssgQ_ID,&buffer,sizeof(buffer),getpid(),0);	--> NO NEED HERE !
-	// The uncoupling confirmation will be received by the child, so just wait for the child to exit
-
-	//cout<< "SERVER : " << buffer.mtext << endl;
-
-	if(waitpid(CHILD_PID,NULL,0)==CHILD_PID)	// i.e. if child exited
-	{
-		cout<<"Successfully uncoupled !"<<endl;
-		coupled=false;
-	}
-	else
-		cout << "Something's wrong ! Why is the child not exiting ???";
-}
-
-
-void requestForCouple()
-{
-	if(coupled)
-	{
-		cout<<"Error : Already coupled !\n";
-		return;
-	}
-	struct mssg buffer;
-	int mssgQ_ID=msgget((key_t)MSSG_Q_KEY,IPC_CREAT|0666);
-
-	// Try to couple with Terminal Mirroring SERVER
-	buffer.mtype=COUPLE;
-	msgsnd(mssgQ_ID,&buffer,sizeof(buffer),0);
-
-	//receive (wait for) only the message specifically meant for own pid
-	msgrcv(mssgQ_ID,&buffer,sizeof(buffer),getpid(),0);	
-
-	cout<< "SERVER : " << buffer.mtext << endl;
-
-	// set boolean flag=true
-	coupled=true;
-
-	CHILD_PID=fork();
-
-	if(CHILD_PID==0)
-	{
-		waitForMirrors();
-		// reaching here means child has returned means that uncoupling has occurred
-		coupled=false;
-		exit(0);
-	}
-}
-
-
-
-void waitForMirrors()
-{
-	int mssgQ_ID=msgget((key_t)MSSG_Q_KEY,IPC_CREAT|0666);
-	struct mssg buffer;
-	while(1)
-	{
-		//receive (wait for) only the mirrored messages
-		msgrcv(mssgQ_ID,&buffer,sizeof(buffer),getppid(),0);	// ***  NOTE : getppid() i.e. child receiving/acknowledging on behalf of parent
-
-		if(startsWith("Uncoupled",buffer.mtext))
-		{
-			//cout<<"Child detected uncoupling...\n";
-			coupled=false;
-			cout<< "\nSERVER : " << buffer.mtext << endl;
-			return;
-		}
-
-		printf( "\n\n---------- MIRRORED MESSAGE ----------------------------------------------------\n%s--------------------------------------------------------------------------------\n\n",buffer.mtext);
-
-	}
-}
-
-
-
-int main()
+void main()
 {
 	loop_SHELL();
-
-	return 0;
 }

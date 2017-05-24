@@ -1,12 +1,6 @@
 /***************************************************************
 Operating Systems Lab Assignment 2 : Problem 1
 
-Name : Kumar Ayush
-Roll No. 13CS10058
-
-Name : Varun Rawal
-Roll No. 13CS10059
-
 ****************************************************************/
 
 // DISTRIBUTED PRIME GENERATION

@@ -1,4 +1,4 @@
-# Simulating Virtual memory through (pure) demand paging
+# Distributed Linear Search and Basic Shell
 **Distributed Linear Search (DLS)** : In DLS, the array is split up into
 subarrays and searching the sub-arrays in delegated to other processes (hence
 distributed).
