@@ -3,9 +3,9 @@ Virtual scheduler runs on top of the existing linux scheduler which you should n
 components: **a generator** and **a scheduler**. The generator is responsible for generating the
 processes at regular interval. The scheduler maintains a *Ready Queue* which contains the
 set of runnable processes at any time-instance. It chooses/schedules one of the runnable
-processes according to the scheduling algorithm for execution. Next it sends a ‘notify’ signal
-to only that chosen/scheduled process and ‘suspend’ signal to all other processes.
-Depending on the signal (‘notify’/’suspend’’) received from the scheduler, the processes can
+processes according to the scheduling algorithm for execution. Next it sends a *notify* signal
+to only that chosen/scheduled process and *suspend* signal to all other processes.
+Depending on the signal (*notify*/*suspend*) received from the scheduler, the processes can
 either (re)start processing or wait until it’s scheduled again. Once all the processes
 terminate, the scheduler also terminate. After building this simulation framework, we evaluate different scheduling strategies
 and evaluate their performance in terms of average response time, average waiting time and
