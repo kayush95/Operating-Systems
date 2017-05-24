@@ -1,9 +1,5 @@
 # Simulating Virtual memory through (pure) demand paging
-The problem overview is given in *problem.pdf.
-
-
-```
-
+The problem overview is given in *problem.pdf*.
 
 
 Commands to use to run the program:
