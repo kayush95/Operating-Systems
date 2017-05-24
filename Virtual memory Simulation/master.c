@@ -1,417 +1,390 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/msg.h>
-#include <string.h>
+#include <unistd.h>
+#include <time.h>
+#include <fcntl.h>
 #include <errno.h>
 #include <signal.h>
-#include <unistd.h>
-#include <sys/time.h>
+#include <string.h>
+#include <sys/msg.h>
+#include <sys/ipc.h>
+#include <sys/types.h>
+#include <limits.h>
+#include <math.h>
 #include <sys/shm.h>
 #include <sys/sem.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 
 
-#define MAX_SIZE 20
-#define MAX_PROCESSES 6
-#define SM1 10
-#define SM2 11
-#define MSQ1 13
-#define MSQ2 14
-#define MSQ3 15
-#define SEM1 16
-#define SEM2 17
-#define FILE_SEM 19
-#define TERMINATE_SEM 20
-#define LOCAL_SIZE 4096
-#define MSGSIZE 256
+typedef struct {
+	int frameno;
+	int isvalid;
+	int count;
+}ptbentry;
 
-struct Page
-{
-    int frame_number;
-    int valid;
-    int last_update;
-};
+typedef struct {
+	pid_t pid;
+	int m;
+	int f_cnt;
+	int f_allo;
+}pcb;
 
-struct PageTable
+typedef struct 
 {
-    struct Page pages[MAX_PROCESSES][MAX_SIZE];
-    int no_of_processes;
-    int no_of_pages_required[MAX_PROCESSES];
-    int last_updates[MAX_PROCESSES];
-};
+	int current;
+	int flist[];
+}freelist;
 
-struct FreeFrameList
-{
-    int frames[MAX_SIZE];  //each contains 0 or 1 to denote valid or not
-    int no_of_frames;
-};
+int k,m,f;
+int flag = 0;
+key_t freekey,pagetbkey;
+key_t readykey, msgq2key, msgq3key;
+key_t pcbkey;
 
-struct message
-{
-    long mtype ;
-    char mtext[MSGSIZE];
-};
+int ptbid, freelid;
+int readyid, msgq2id, msgq3id;
+int pcbid;
 
-char* i_to_a(int x)   //converting int to char*
+void print_PCB(pcb p)
 {
-    char *s = (char*)malloc(20*sizeof(char));
-    sprintf(s,"%d",x);
-    return s;
+	printf("PID = %d m = %d f_cnt = %d\n",p.pid,p.m,p.f_cnt);
+
+}
+int max(int a, int b)
+{
+	return (a>b)?a:b;
 }
 
-
-
-struct PageTable* ptr1;
-struct FreeFrameList* ptr2;
-
-
-void initialize(int no_of_processes,int *no_of_pages_required,int no_of_free_frames,int sm1,int sm2)
+int min(int a,int b)
 {
-	int i,j;
-	
-	ptr1 = (struct PageTable*)shmat(sm1,NULL,0);
-	ptr2 = (struct FreeFrameList*)shmat(sm2,NULL,0);
+	return (a<b)?a:b;	
+}
 
-    ptr2->no_of_frames = no_of_free_frames;
-    for(i = 0;i<no_of_free_frames;++i)
-    {
-    	ptr2->frames[i] = 1;  //means available
-    }
+void myexit(int status);
 
-    ptr1->no_of_processes = no_of_processes;
+void createFreeList()
+{
+	int i;
+	freekey = ftok("master.c",56);
+	if(freekey == -1)
+	{	
+		perror("freekey");
+		myexit(EXIT_FAILURE);
+	}
+	freelid = shmget(freekey, sizeof(freelist)+f*sizeof(int), 0666 | IPC_CREAT | IPC_EXCL);
+	if(freelid == -1)
+	{	
+		perror("free-shmget");
+		myexit(EXIT_FAILURE);
+	}
 
-	for(i = 0;i<no_of_processes;++i)
+	freelist *ptr = (freelist*)(shmat(freelid, NULL, 0));
+	if(*((int *)ptr) == -1)
 	{
-		for(j = 0;j < MAX_SIZE;++j)
-		{
-			(ptr1->pages[i][j]).frame_number = -1; //means on disk
-			(ptr1->pages[i][j]).valid = 0; //means invalid
-            (ptr1->pages[i][j]).last_update = 0;
-		}
-		ptr1->no_of_pages_required[i] = no_of_pages_required[i];
-        ptr1->last_updates[i] = 0;
+		perror("freel-shmat");
+		myexit(EXIT_FAILURE);
+	}
+	for(i=0;i<f;i++)
+	{
+		ptr->flist[i] = i;
+	}
+	ptr->current = f-1;
+
+	if(shmdt(ptr) == -1)
+	{
+		perror("freel-shmdt");
+		myexit(EXIT_FAILURE);
+	}
+}
+
+void createPageTables()
+{
+	int i;
+	pagetbkey = ftok("master.c",100);
+	if(pagetbkey == -1)
+	{	
+		perror("pagetbkey");
+		myexit(EXIT_FAILURE);
+	}
+	ptbid = shmget(pagetbkey, m*sizeof(ptbentry)*k, 0666 | IPC_CREAT | IPC_EXCL);
+	if(ptbid == -1)
+	{	
+		perror("pcb-shmget");
+		myexit(EXIT_FAILURE);
+	}
+
+	ptbentry *ptr = (ptbentry*)(shmat(ptbid, NULL, 0));
+	if(*(int *)ptr == -1)
+	{
+		perror("pcb-shmat");
+		myexit(EXIT_FAILURE);
+	}
+
+	for(i=0;i<k*m;i++)
+	{
+		ptr[i].frameno = -1;
+		ptr[i].isvalid = 0;
+	}
+
+	if(shmdt(ptr) == -1)
+	{
+		perror("pcb-shmdt");
+		myexit(EXIT_FAILURE);
 	}
 }
 
 
-
-int sm1,sm2;
-
-void handler(int a)
+void createMessageQueues()
 {
-    printf("Entered\n");
-	shmctl(sm1, IPC_RMID, NULL);
-	shmctl(sm2, IPC_RMID, NULL);
+	readykey = ftok("master.c",200);
+	if(readykey == -1)
+	{	
+		perror("readykey");
+		myexit(EXIT_FAILURE);
+	}
+	readyid = msgget(readykey, 0666 | IPC_CREAT| IPC_EXCL);
+	if(readyid == -1)
+	{
+		perror("ready-msgget");
+		myexit(EXIT_FAILURE);
+	}
 
-	char str[30];
-	strcpy(str,"ipcrm -Q ");
-	strcat(str,i_to_a(MSQ1));
-	system(str);
+	msgq2key = ftok("master.c",300);
+	if(msgq2key == -1)
+	{	
+		perror("msgq2key");
+		myexit(EXIT_FAILURE);
+	}
+	msgq2id = msgget(msgq2key, 0666 | IPC_CREAT| IPC_EXCL );
+	if(msgq2id == -1)
+	{
+		perror("msgq2-msgget");
+		myexit(EXIT_FAILURE);
+	} 
 
-	strcpy(str,"ipcrm -Q ");
-	strcat(str,i_to_a(MSQ2));
-	system(str);
-
-	strcpy(str,"ipcrm -Q ");
-	strcat(str,i_to_a(MSQ3));
-	system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(SEM1));
-    system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(SEM2));
-    system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(FILE_SEM));
-    system(str);
-
-    printf("sending\n");
-
-	kill(0,SIGINT);
-	printf("sent kill everything\n");
-	exit(0);
+	msgq3key = ftok("master.c",400);
+	if(msgq3key == -1)
+	{	
+		perror("msgq3key");
+		myexit(EXIT_FAILURE);
+	}
+	msgq3id = msgget(msgq3key, 0666 | IPC_CREAT| IPC_EXCL);
+	if(msgq3id == -1)
+	{
+		perror("msgq3-msgget");
+		myexit(EXIT_FAILURE);
+	} 
 }
 
-void terminate_fun()
+void createPCBs()
 {
-    shmctl(sm1, IPC_RMID, NULL);
-    shmctl(sm2, IPC_RMID, NULL);
+	int i;
+	pcbkey = ftok("master.c",500);
+	if(pcbkey == -1)
+	{	
+		perror("pcbkey");
+		myexit(EXIT_FAILURE);
+	}
+	pcbid = shmget(pcbkey, sizeof(pcb)*k, 0666 | IPC_CREAT | IPC_EXCL );
+	if(pcbid == -1)
+	{	
+		perror("pcb-shmget");
+		myexit(EXIT_FAILURE);
+	}
 
-    char str[30];
-    strcpy(str,"ipcrm -Q ");
-    strcat(str,i_to_a(MSQ1));
-    system(str);
+	pcb *ptr = (pcb*)(shmat(pcbid, NULL, 0));
+	if(*(int *)ptr == -1)
+	{
+		perror("pcb-shmat");
+		myexit(EXIT_FAILURE);
+	}
 
-    strcpy(str,"ipcrm -Q ");
-    strcat(str,i_to_a(MSQ2));
-    system(str);
+	int totpages = 0;
+	for(i=0;i<k;i++)
+	{
+		ptr[i].pid = i;
+		ptr[i].m = rand()%m + 1;
+		ptr[i].f_allo = 0;
+		totpages +=  ptr[i].m;
+	}
+	int allo_frame = 0;
+	printf("tot = %d, k = %d, f=  %d\n",totpages,k,f);
+	int max = 0,maxi = 0;
+	for(i=0;i<k;i++)
+	{
+		ptr[i].pid = -1;
+		int allo = (int)round(ptr[i].m*(f-k)/(float)totpages) + 1;
+		if(ptr[i].m > max)
+		{
+			max = ptr[i].m;
+			maxi = i;
+		}
+		allo_frame = allo_frame + allo;
+		//printf("%d\n",allo);
+		ptr[i].f_cnt = allo;
+		
+	}
+	ptr[maxi].f_cnt += f - allo_frame; 
 
-    strcpy(str,"ipcrm -Q ");
-    strcat(str,i_to_a(MSQ3));
-    system(str);
+	for(i=0;i<k;i++)
+	{
+		print_PCB(ptr[i]);
+	}
 
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(SEM1));
-    system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(SEM2));
-    system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(FILE_SEM));
-    system(str);
-
-    strcpy(str,"ipcrm -S ");
-    strcat(str,i_to_a(TERMINATE_SEM));
-    system(str);
+	if(shmdt(ptr) == -1)
+	{
+		perror("freel-shmdt");
+		myexit(EXIT_FAILURE);
+	}
 
 }
 
-void print_shared_mem_status()
+void clearResources()
 {
-    printf("Page Table entries are-----\n");
-    int i;
-    for(i = 0;i< ptr1->no_of_processes;++i)
-    {
-        printf("Process -- %d,%d\n",i+1,ptr1->no_of_pages_required[i]);
-        /*int no_entries = ptr1->no_of_pages_required[i];
-        int j;
-        for(j = 0;j<no_entries;++j)
-        {
-            printf("(%d,%d);",(ptr1->pages[i][j]).frame_number,(ptr1->pages[i][j]).valid);
-        }*/
-    }
-    printf("\n");
-    printf("Free Frames are-------\n");
-    for(i = 0;i<ptr2->no_of_frames;++i)
-    {
-        printf("%d ",ptr2->frames[i]);
-    }
-    printf("\n");
+	if(shmctl(ptbid,IPC_RMID, NULL) == -1)
+	{
+		perror("shmctl-ptb");
+	}
+	if(shmctl(freelid,IPC_RMID, NULL) == -1)
+	{
+		perror("shmctl-freel");
+	}
+	if(shmctl(pcbid,IPC_RMID, NULL) == -1)
+	{
+		perror("shmctl-pcb");
+	}
+	if(msgctl(readyid, IPC_RMID, NULL) == -1)
+	{
+		perror("msgctl-ready");
+	}
+	if(msgctl(msgq2id, IPC_RMID, NULL) == -1)
+	{
+		perror("msgctl-msgq2");
+	}
+	if(msgctl(msgq3id, IPC_RMID, NULL) == -1)
+	{
+		perror("msgctl-msgq3");
+	}
 }
 
-void down(int semid,int a)
+void myexit(int status)
 {
-            struct sembuf sop;
-            sop.sem_num= a;
-            sop.sem_op= -1;
-            sop.sem_flg =0;
-            semop(semid, &sop, 1);
-}
-
-void up(int semid,int a)
-{
-            struct sembuf sop;
-            sop.sem_num= a;
-            sop.sem_op= 1;
-            sop.sem_flg =0;
-            semop(semid, &sop, 1);
+	clearResources();
+	exit(status);
 }
 
 
-int main(int argc,char* argv[])
+void createProcesses()
+{
+	pcb *ptr = (pcb*)(shmat(pcbid, NULL, 0));
+	/*if(*(int *)ptr == -1)
+	{
+		perror("pcb-shmat");
+		myexit(EXIT_FAILURE);
+	}*/
+
+	int i,j;
+	for(i=0;i<k;i++)
+	{
+		int rlen = rand()%(8*ptr[i].m) + 2*ptr[i].m + 1;
+		char rstring[m*20*40];
+		printf("rlen = %d\n",rlen);
+		int l = 0;
+		for(j=0;j<rlen;j++)
+		{
+			int r;
+			r = rand()%ptr[i].m;
+			float p = (rand()%100)/100.0;
+			if(p < 0.2)
+			{
+				r = rand()%(1000*m) + ptr[i].m;
+			}
+			l += sprintf(rstring+l,"%d|",r);
+		}
+		printf("Ref string = %s\n",rstring);
+		if(fork() == 0)
+		{
+			char buf1[20],buf2[20],buf3[20];
+			sprintf(buf1,"%d",i);
+			sprintf(buf2,"%d",readykey);
+			sprintf(buf3,"%d",msgq3key);
+			execlp("./process","./process",buf1,buf2,buf3,rstring,(char *)(NULL));
+			exit(0);
+
+		}
+		//TODO: fork proecess here
+		usleep(250*1000);	
+	}
+
+}
+int pid,spid,mpid;
+
+void timetoend(int sig)
+{
+	//printf("Mater: gi=o the signal\n");
+	sleep(1);
+	kill(spid, SIGTERM);
+	kill(mpid, SIGUSR2);
+	sleep(2);
+	flag = 1;
+
+}
+int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
-	signal(SIGINT,handler);
-    system("cc -o mmu.out mmu.c");
-    system("cc -o sched.out sched.c");
-    system("cc -o process.out process.c");
-	int no_of_processes;
-	int max_no_of_pages_per_process;
-	int i;
-	int no_of_pages_required[MAX_PROCESSES];
-	int no_of_free_frames;
-	FILE *ptr_file;
-	int msq1,msq2,msq3;
-    int semid1,semid2,semid3,semid4;
-    ptr_file =fopen("input.txt", "r");
-    fscanf(ptr_file,"%d",&no_of_processes);
-    fscanf(ptr_file,"%d",&max_no_of_pages_per_process);
-    struct message sbuf,rbuf;
+	signal(SIGUSR1, timetoend);
+	signal(SIGINT, myexit);
+	if(argc < 4)
+	{
+		printf("master k m f\n");
+		myexit(EXIT_FAILURE);
+	}
+	k = atoi(argv[1]);
+	m = atoi(argv[2]);
+	f = atoi(argv[3]);
+	pid = getpid();
+	if(k <= 0 || m <= 0 || f <=0 || f < k)
+	{
+		printf("Invalid input\n");
+		myexit(EXIT_FAILURE);
+	}
 
-    pid_t mainpid = getpid();
-    pid_t mainpgid = getpgid(mainpid);
+	createPageTables();
+	createFreeList();
+	createPCBs();
+	createMessageQueues();
 
-    for(i = 0;i<no_of_processes;++i)
-    {
-    	no_of_pages_required[i] = (rand() % max_no_of_pages_per_process) + 1;
-    }
-
-    fscanf(ptr_file,"%d",&no_of_free_frames);
-    if((sm1 = shmget(SM1, LOCAL_SIZE, IPC_CREAT|0666)) < 0)
-    {
-        perror("Error in creatign shared memory 1:");
-        exit(1);
-    }
-    if((sm2 = shmget(SM2, LOCAL_SIZE, IPC_CREAT|0666)) < 0)
-    {
-        perror("Error in creatign shared memory 2:");
-        exit(1);
-    }
-    
-    if (( msq1 = msgget ( MSQ1 , 0666|IPC_CREAT ) ) < 0 ) 
-    {
-        perror ("Error int creating message queue 1:"); 
-        exit (1) ;
-    }
-    if (( msq2 = msgget ( MSQ2 , 0666|IPC_CREAT ) ) < 0 ) 
-    {
-        perror ("Error int creating message queue 1:"); 
-        exit (1) ;
-    }
-    if (( msq3 = msgget ( MSQ3 , 0666|IPC_CREAT ) ) < 0 ) 
-    {
-        perror ("Error int creating message queue 1:"); 
-        exit (1) ;
-    }
-    
-    if(( semid1 =semget(SEM1, no_of_processes,0666|IPC_CREAT)) < 0)
-    {
-        perror("Error in creating semaphores :");
-        exit(1);
-    }
-    ushort val[no_of_processes];
-    for(i = 0;i<no_of_processes;++i)
-    {
-        val[i] = 0;
-    }
-    semctl(semid1, 0, SETALL, val);
-
-    if(( semid2 =semget(SEM2,1,0666|IPC_CREAT)) < 0)
-    {
-        perror("Error in creating semaphores :");
-        exit(1);
-    }
-    ushort val1[1];
-    for(i = 0;i<1;++i)
-    {
-        val1[i] = 0;
-    }
-    semctl(semid2, 0, SETALL, val1);
-
-    if(( semid3 =semget(FILE_SEM,1,0666|IPC_CREAT)) < 0)
-    {
-        perror("Error in creating semaphores :");
-        exit(1);
-    }
-    ushort val2[1];
-    for(i = 0;i<1;++i)
-    {
-        val2[i] = 1;
-    }
-    semctl(semid3, 0, SETALL, val2);
-
-    if(( semid4 =semget(TERMINATE_SEM,1,0666|IPC_CREAT)) < 0)
-    {
-        perror("Error in creating semaphores :");
-        exit(1);
-    }
-    ushort val3[1];
-    for(i = 0;i<1;++i)
-    {
-        val3[i] = 0;
-    }
-    semctl(semid4, 0, SETALL, val3);
+	if((spid = fork()) == 0)
+	{
+		char buf1[20],buf2[20],buf3[20],buf4[20];
+		sprintf(buf1,"%d",readykey);
+		sprintf(buf2,"%d",msgq2key);
+		sprintf(buf3,"%d",k);
+		sprintf(buf4,"%d",pid);
+		execlp("./scheduler","./scheduler",buf1,buf2,buf3,buf4,(char *)(NULL));
+		exit(0);
+	}
 
 
+	if((mpid = fork()) == 0)
+	{
+		char buf1[20],buf2[20],buf3[20],buf4[20],buf5[20],buf6[20],buf7[20];
+		sprintf(buf1,"%d",msgq2id);
+		sprintf(buf2,"%d",msgq3id);
+		sprintf(buf3,"%d",ptbid);
+		sprintf(buf4,"%d",freelid);
+		sprintf(buf5,"%d",pcbid);
+		sprintf(buf6,"%d",m);
+		sprintf(buf7,"%d",k);
+		execlp("./mmu","./mmu",buf1,buf2,buf3,buf4,buf5,buf6,buf7,(char *)(NULL));
+		exit(0);
+	}
+	printf("generating processed\n");
+	createProcesses();
+	if(flag == 0)
+		pause();
+	clearResources();
 
-    initialize(no_of_processes,no_of_pages_required,no_of_free_frames,sm1,sm2);
-
-    
-    
-
-    //calling scheduler
-
-    char str[200];
-    strcpy(str,"./sched.out ");
-    strcat(str,i_to_a(SM1));
-    strcat(str," ");
-    strcat(str,i_to_a(SM2));
-    strcat(str," ");
-    strcat(str,i_to_a(MSQ1));
-    strcat(str," ");
-    strcat(str,i_to_a(MSQ2));
-    strcat(str," ");
-    strcat(str,i_to_a(mainpgid));
-    strcat(str," ");
-    strcat(str,i_to_a(SEM1));
-    strcat(str," ");
-    strcat(str,i_to_a(no_of_processes));
-    strcat(str," ");
-    strcat(str,i_to_a(SEM2));
-    strcat(str,"&");
-
-    system(str);
-    
-    printf("generated scheduler\n");
-    //xterm of mmu
-
-    char cwd[1024];
-    if(getcwd(cwd, sizeof(cwd)) != NULL)printf("Current working dir: %s\n", cwd);
-
-    strcpy(str,"xterm -hold -e ");
-    strcat(str,cwd);
-    strcat(str,"/mmu.out ");
-    strcat(str,i_to_a(SM1));
-    strcat(str," ");
-    strcat(str,i_to_a(SM2));
-    strcat(str," ");
-    strcat(str,i_to_a(MSQ2));
-    strcat(str," ");
-    strcat(str,i_to_a(MSQ3));
-    strcat(str," ");
-    strcat(str,i_to_a(mainpgid));
-    strcat(str," ");
-    strcat(str,i_to_a(SEM2));
-    strcat(str,"&");
-
-    system(str);
-
-    printf("generated mmu\n");
-    //calling processes one after other
-
-    for(i = 0;i<no_of_processes;++i)
-    {
-    	sleep(0.25);
-        sbuf.mtype = 80000;  //means that process is there here
-        strcpy(sbuf.mtext,i_to_a(i));
-    	
-        strcpy(str,"./process.out ");
-    	strcat(str,i_to_a(MSQ1));
-    	strcat(str," ");
-    	strcat(str,i_to_a(MSQ3));
-    	strcat(str," ");
-        strcat(str,i_to_a(no_of_pages_required[i]));
-        strcat(str," ");
-    	strcat(str,i_to_a(mainpgid));
-        strcat(str," ");
-        strcat(str,i_to_a(i));
-        strcat(str," ");
-        strcat(str,i_to_a(SEM1));
-        strcat(str," ");
-        strcat(str,i_to_a(no_of_processes));
-        strcat(str,"&");
-        system(str);
-
-        if(msgsnd (msq1, &sbuf, strlen(sbuf.mtext)+1 , 0) < 0) 
-        {
-            perror( "Error in sending Process data : ");
-            exit (1) ;
-        }
-    }
-    printf("generated all processes\n");
-    
-    print_shared_mem_status();
-
-    down(semid4,0);
-    terminate_fun();
-    printf("-----------Master got Terminated!!------------\n");
-
-
+	return 0;
 }
