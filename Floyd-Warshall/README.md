@@ -24,7 +24,7 @@ Commands to use to run the program:
   ```
   ./fw < input1.txt
   ./fw < input2.txt
-  ./fw < input.txt
+  ./fw < input3.txt
   ```
 
 
