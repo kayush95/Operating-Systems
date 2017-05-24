@@ -1,0 +1,1327 @@
+Enter Graph : 
+
+Enter N,M (1<=N<=100) : Enter 15 edges as (u,v,w) pairs (1<= u,v <=8) : 
+Following is the adjacency matrix : 
+
+U = 1 : 2, 5, 
+U = 2 : 1, 4, 3, 7, 
+U = 3 : 5, 2, 6, 7, 
+U = 4 : 2, 8, 6, 
+U = 5 : 8, 1, 7, 3, 
+U = 6 : 4, 8, 3, 7, 
+U = 7 : 8, 5, 2, 6, 3, 
+U = 8 : 4, 5, 6, 7, 
+
+Following is the INITIAL dist matrix (-1 --> Infinity) : 
+  0   5  -1  -1   3  -1  -1  -1 
+  5   0   8   9  -1  -1   4  -1 
+ -1   8   0  -1   1   6   3  -1 
+ -1   9  -1   0  -1   4  -1   3 
+  3  -1   1  -1   0  -1   1   4 
+ -1  -1   6   4  -1   0   4   5 
+ -1   4   3  -1   1   4   0   4 
+ -1  -1  -1   3   4   5   4   0 
+Thread Started : i = 1, k = 1 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 1      Mutex lock released by Thread  i = 1, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 1      Mutex lock released by Thread  i = 1, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 2      Mutex lock released by Thread  i = 1, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 2      Mutex lock released by Thread  i = 1, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 3      Mutex lock released by Thread  i = 1, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 3      Mutex lock released by Thread  i = 1, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 4      Mutex lock released by Thread  i = 1, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 4      Mutex lock released by Thread  i = 1, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 5      Mutex lock released by Thread  i = 1, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 5      Mutex lock released by Thread  i = 1, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 6      Mutex lock released by Thread  i = 1, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 6      Mutex lock released by Thread  i = 1, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 7      Mutex lock released by Thread  i = 1, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 7      Mutex lock released by Thread  i = 1, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 8      Mutex lock released by Thread  i = 1, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 1 j = 8      Mutex lock released by Thread  i = 1, k = 1 j = 8 
+Thread Started : i = 2, k = 1 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 1      Mutex lock released by Thread  i = 2, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 1      Mutex lock released by Thread  i = 2, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 2      Mutex lock released by Thread  i = 2, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 2      Mutex lock released by Thread  i = 2, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 3      Mutex lock released by Thread  i = 2, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 3      Mutex lock released by Thread  i = 2, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 4      Mutex lock released by Thread  i = 2, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 4      Mutex lock released by Thread  i = 2, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 5      Mutex lock released by Thread  i = 2, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 5      Mutex lock released by Thread  i = 2, k = 1 j = 5 
+Mutex lock acquired for writing by Thread  i = 2, k = 1 j = 5      Thread  i = 2, k = 1 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 6      Mutex lock released by Thread  i = 2, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 6      Mutex lock released by Thread  i = 2, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 7      Mutex lock released by Thread  i = 2, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 7      Mutex lock released by Thread  i = 2, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 8      Mutex lock released by Thread  i = 2, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 1 j = 8      Mutex lock released by Thread  i = 2, k = 1 j = 8 
+Thread Started : i = 3, k = 1 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 1      Mutex lock released by Thread  i = 3, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 1      Mutex lock released by Thread  i = 3, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 2      Mutex lock released by Thread  i = 3, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 2      Mutex lock released by Thread  i = 3, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 3      Mutex lock released by Thread  i = 3, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 3      Mutex lock released by Thread  i = 3, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 4      Mutex lock released by Thread  i = 3, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 4      Mutex lock released by Thread  i = 3, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 5      Mutex lock released by Thread  i = 3, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 5      Mutex lock released by Thread  i = 3, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 6      Mutex lock released by Thread  i = 3, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 6      Mutex lock released by Thread  i = 3, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 7      Mutex lock released by Thread  i = 3, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 7      Mutex lock released by Thread  i = 3, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 8      Mutex lock released by Thread  i = 3, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 1 j = 8      Mutex lock released by Thread  i = 3, k = 1 j = 8 
+Thread Started : i = 4, k = 1 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 1      Mutex lock released by Thread  i = 4, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 1      Mutex lock released by Thread  i = 4, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 2      Mutex lock released by Thread  i = 4, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 2      Mutex lock released by Thread  i = 4, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 3      Mutex lock released by Thread  i = 4, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 3      Mutex lock released by Thread  i = 4, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 4      Mutex lock released by Thread  i = 4, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 4      Mutex lock released by Thread  i = 4, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 5      Mutex lock released by Thread  i = 4, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 5      Mutex lock released by Thread  i = 4, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 6      Mutex lock released by Thread  i = 4, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 6      Mutex lock released by Thread  i = 4, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 7      Mutex lock released by Thread  i = 4, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 7      Mutex lock released by Thread  i = 4, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 8      Mutex lock released by Thread  i = 4, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 1 j = 8      Mutex lock released by Thread  i = 4, k = 1 j = 8 
+Thread Started : i = 5, k = 1 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 1      Mutex lock released by Thread  i = 5, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 1      Mutex lock released by Thread  i = 5, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 2      Mutex lock released by Thread  i = 5, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 2      Mutex lock released by Thread  i = 5, k = 1 j = 2 
+Mutex lock acquired for writing by Thread  i = 5, k = 1 j = 2      Thread  i = 5, k = 1 j = 2 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 3      Mutex lock released by Thread  i = 5, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 3      Mutex lock released by Thread  i = 5, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 4      Mutex lock released by Thread  i = 5, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 4      Mutex lock released by Thread  i = 5, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 5      Mutex lock released by Thread  i = 5, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 5      Mutex lock released by Thread  i = 5, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 6      Mutex lock released by Thread  i = 5, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 6      Mutex lock released by Thread  i = 5, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 7      Mutex lock released by Thread  i = 5, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 7      Mutex lock released by Thread  i = 5, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 8      Mutex lock released by Thread  i = 5, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 1 j = 8      Mutex lock released by Thread  i = 5, k = 1 j = 8 
+Thread Started : i = 6, k = 1 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 1      Mutex lock released by Thread  i = 6, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 1      Mutex lock released by Thread  i = 6, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 2      Mutex lock released by Thread  i = 6, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 2      Mutex lock released by Thread  i = 6, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 3      Mutex lock released by Thread  i = 6, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 3      Mutex lock released by Thread  i = 6, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 4      Mutex lock released by Thread  i = 6, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 4      Mutex lock released by Thread  i = 6, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 5      Mutex lock released by Thread  i = 6, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 5      Mutex lock released by Thread  i = 6, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 6      Mutex lock released by Thread  i = 6, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 6      Mutex lock released by Thread  i = 6, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 7      Mutex lock released by Thread  i = 6, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 7      Mutex lock released by Thread  i = 6, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 8      Mutex lock released by Thread  i = 6, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 1 j = 8      Mutex lock released by Thread  i = 6, k = 1 j = 8 
+Thread Started : i = 8, k = 1 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 1      Mutex lock released by Thread  i = 8, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 1      Mutex lock released by Thread  i = 8, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 2      Mutex lock released by Thread  i = 8, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 2      Mutex lock released by Thread  i = 8, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 3      Mutex lock released by Thread  i = 8, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 3      Mutex lock released by Thread  i = 8, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 4      Mutex lock released by Thread  i = 8, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 4      Mutex lock released by Thread  i = 8, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 5      Mutex lock released by Thread  i = 8, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 5      Mutex lock released by Thread  i = 8, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 6      Mutex lock released by Thread  i = 8, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 6      Mutex lock released by Thread  i = 8, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 7      Mutex lock released by Thread  i = 8, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 7      Mutex lock released by Thread  i = 8, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 8      Mutex lock released by Thread  i = 8, k = 1 j = 8 
+Thread Started : i = 7, k = 1 
+Mutex lock acquired by Thread  i = 8, k = 1 j = 8      Mutex lock released by Thread  i = 8, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 1      Mutex lock released by Thread  i = 7, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 1      Mutex lock released by Thread  i = 7, k = 1 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 2      Mutex lock released by Thread  i = 7, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 2      Mutex lock released by Thread  i = 7, k = 1 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 3      Mutex lock released by Thread  i = 7, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 3      Mutex lock released by Thread  i = 7, k = 1 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 4      Mutex lock released by Thread  i = 7, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 4      Mutex lock released by Thread  i = 7, k = 1 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 5      Mutex lock released by Thread  i = 7, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 5      Mutex lock released by Thread  i = 7, k = 1 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 6      Mutex lock released by Thread  i = 7, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 6      Mutex lock released by Thread  i = 7, k = 1 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 7      Mutex lock released by Thread  i = 7, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 7      Mutex lock released by Thread  i = 7, k = 1 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 8      Mutex lock released by Thread  i = 7, k = 1 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 1 j = 8      Mutex lock released by Thread  i = 7, k = 1 j = 8 
+Thread Started : i = 1, k = 2 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 1      Mutex lock released by Thread  i = 1, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 1      Mutex lock released by Thread  i = 1, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 2      Mutex lock released by Thread  i = 1, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 2      Mutex lock released by Thread  i = 1, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 3      Mutex lock released by Thread  i = 1, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 3      Mutex lock released by Thread  i = 1, k = 2 j = 3 
+Mutex lock acquired for writing by Thread  i = 1, k = 2 j = 3      Thread  i = 1, k = 2 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 4      Mutex lock released by Thread  i = 1, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 4      Mutex lock released by Thread  i = 1, k = 2 j = 4 
+Mutex lock acquired for writing by Thread  i = 1, k = 2 j = 4      Thread  i = 1, k = 2 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 5      Mutex lock released by Thread  i = 1, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 5      Mutex lock released by Thread  i = 1, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 6      Mutex lock released by Thread  i = 1, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 6      Mutex lock released by Thread  i = 1, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 7      Mutex lock released by Thread  i = 1, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 7      Mutex lock released by Thread  i = 1, k = 2 j = 7 
+Mutex lock acquired for writing by Thread  i = 1, k = 2 j = 7      Thread  i = 1, k = 2 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 8      Mutex lock released by Thread  i = 1, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 2 j = 8      Mutex lock released by Thread  i = 1, k = 2 j = 8 
+Thread Started : i = 8, k = 2 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 1      Mutex lock released by Thread  i = 8, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 1      Mutex lock released by Thread  i = 8, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 2      Mutex lock released by Thread  i = 8, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 2      Mutex lock released by Thread  i = 8, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 3      Mutex lock released by Thread  i = 8, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 3      Mutex lock released by Thread  i = 8, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 4      Mutex lock released by Thread  i = 8, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 4      Mutex lock released by Thread  i = 8, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 5      Mutex lock released by Thread  i = 8, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 5      Mutex lock released by Thread  i = 8, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 6      Mutex lock released by Thread  i = 8, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 6      Mutex lock released by Thread  i = 8, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 7      Mutex lock released by Thread  i = 8, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 7      Mutex lock released by Thread  i = 8, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 8      Mutex lock released by Thread  i = 8, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 2 j = 8      Mutex lock released by Thread  i = 8, k = 2 j = 8 
+Thread Started : i = 2, k = 2 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 1      Mutex lock released by Thread  i = 2, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 1      Mutex lock released by Thread  i = 2, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 2      Mutex lock released by Thread  i = 2, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 2      Mutex lock released by Thread  i = 2, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 3      Mutex lock released by Thread  i = 2, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 3      Mutex lock released by Thread  i = 2, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 4      Mutex lock released by Thread  i = 2, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 4      Mutex lock released by Thread  i = 2, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 5      Mutex lock released by Thread  i = 2, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 5      Mutex lock released by Thread  i = 2, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 6      Mutex lock released by Thread  i = 2, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 6      Mutex lock released by Thread  i = 2, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 7      Mutex lock released by Thread  i = 2, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 7      Mutex lock released by Thread  i = 2, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 8      Mutex lock released by Thread  i = 2, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 2 j = 8      Mutex lock released by Thread  i = 2, k = 2 j = 8 
+Thread Started : i = 3, k = 2 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 1      Mutex lock released by Thread  i = 3, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 1      Mutex lock released by Thread  i = 3, k = 2 j = 1 
+Mutex lock acquired for writing by Thread  i = 3, k = 2 j = 1      Thread  i = 3, k = 2 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 2      Mutex lock released by Thread  i = 3, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 2      Mutex lock released by Thread  i = 3, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 3      Mutex lock released by Thread  i = 3, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 3      Mutex lock released by Thread  i = 3, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 4      Mutex lock released by Thread  i = 3, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 4      Mutex lock released by Thread  i = 3, k = 2 j = 4 
+Mutex lock acquired for writing by Thread  i = 3, k = 2 j = 4      Thread  i = 3, k = 2 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 5      Mutex lock released by Thread  i = 3, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 5      Mutex lock released by Thread  i = 3, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 6      Mutex lock released by Thread  i = 3, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 6      Mutex lock released by Thread  i = 3, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 7      Mutex lock released by Thread  i = 3, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 7      Mutex lock released by Thread  i = 3, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 8      Mutex lock released by Thread  i = 3, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 2 j = 8      Mutex lock released by Thread  i = 3, k = 2 j = 8 
+Thread Started : i = 4, k = 2 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 1      Mutex lock released by Thread  i = 4, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 1      Mutex lock released by Thread  i = 4, k = 2 j = 1 
+Mutex lock acquired for writing by Thread  i = 4, k = 2 j = 1      Thread  i = 4, k = 2 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 2      Mutex lock released by Thread  i = 4, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 2      Mutex lock released by Thread  i = 4, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 3      Mutex lock released by Thread  i = 4, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 3      Mutex lock released by Thread  i = 4, k = 2 j = 3 
+Mutex lock acquired for writing by Thread  i = 4, k = 2 j = 3      Thread  i = 4, k = 2 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 4      Mutex lock released by Thread  i = 4, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 4      Mutex lock released by Thread  i = 4, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 5      Mutex lock released by Thread  i = 4, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 5      Mutex lock released by Thread  i = 4, k = 2 j = 5 
+Mutex lock acquired for writing by Thread  i = 4, k = 2 j = 5      Thread  i = 4, k = 2 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 6      Mutex lock released by Thread  i = 4, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 6      Mutex lock released by Thread  i = 4, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 7      Mutex lock released by Thread  i = 4, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 7      Mutex lock released by Thread  i = 4, k = 2 j = 7 
+Mutex lock acquired for writing by Thread  i = 4, k = 2 j = 7      Thread  i = 4, k = 2 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 8      Mutex lock released by Thread  i = 4, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 2 j = 8      Mutex lock released by Thread  i = 4, k = 2 j = 8 
+Thread Started : i = 5, k = 2 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 1      Mutex lock released by Thread  i = 5, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 1      Mutex lock released by Thread  i = 5, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 2      Mutex lock released by Thread  i = 5, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 2      Mutex lock released by Thread  i = 5, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 3      Mutex lock released by Thread  i = 5, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 3      Mutex lock released by Thread  i = 5, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 4      Mutex lock released by Thread  i = 5, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 4      Mutex lock released by Thread  i = 5, k = 2 j = 4 
+Mutex lock acquired for writing by Thread  i = 5, k = 2 j = 4      Thread  i = 5, k = 2 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 5      Mutex lock released by Thread  i = 5, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 5      Mutex lock released by Thread  i = 5, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 6      Mutex lock released by Thread  i = 5, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 6      Mutex lock released by Thread  i = 5, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 7      Mutex lock released by Thread  i = 5, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 7      Mutex lock released by Thread  i = 5, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 8      Mutex lock released by Thread  i = 5, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 2 j = 8      Mutex lock released by Thread  i = 5, k = 2 j = 8 
+Thread Started : i = 6, k = 2 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 1      Mutex lock released by Thread  i = 6, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 1      Mutex lock released by Thread  i = 6, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 2      Mutex lock released by Thread  i = 6, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 2      Mutex lock released by Thread  i = 6, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 3      Mutex lock released by Thread  i = 6, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 3      Mutex lock released by Thread  i = 6, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 4      Mutex lock released by Thread  i = 6, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 4      Mutex lock released by Thread  i = 6, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 5      Mutex lock released by Thread  i = 6, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 5      Mutex lock released by Thread  i = 6, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 6      Mutex lock released by Thread  i = 6, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 6      Mutex lock released by Thread  i = 6, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 7      Mutex lock released by Thread  i = 6, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 7      Mutex lock released by Thread  i = 6, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 8      Mutex lock released by Thread  i = 6, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 2 j = 8      Mutex lock released by Thread  i = 6, k = 2 j = 8 
+Thread Started : i = 7, k = 2 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 1      Mutex lock released by Thread  i = 7, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 1      Mutex lock released by Thread  i = 7, k = 2 j = 1 
+Mutex lock acquired for writing by Thread  i = 7, k = 2 j = 1      Thread  i = 7, k = 2 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 7, k = 2 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 2      Mutex lock released by Thread  i = 7, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 2      Mutex lock released by Thread  i = 7, k = 2 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 3      Mutex lock released by Thread  i = 7, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 3      Mutex lock released by Thread  i = 7, k = 2 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 4      Mutex lock released by Thread  i = 7, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 4      Mutex lock released by Thread  i = 7, k = 2 j = 4 
+Mutex lock acquired for writing by Thread  i = 7, k = 2 j = 4      Thread  i = 7, k = 2 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 7, k = 2 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 5      Mutex lock released by Thread  i = 7, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 5      Mutex lock released by Thread  i = 7, k = 2 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 6      Mutex lock released by Thread  i = 7, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 6      Mutex lock released by Thread  i = 7, k = 2 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 7      Mutex lock released by Thread  i = 7, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 7      Mutex lock released by Thread  i = 7, k = 2 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 8      Mutex lock released by Thread  i = 7, k = 2 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 2 j = 8      Mutex lock released by Thread  i = 7, k = 2 j = 8 
+Thread Started : i = 1, k = 3 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 1      Mutex lock released by Thread  i = 1, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 1      Mutex lock released by Thread  i = 1, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 2      Mutex lock released by Thread  i = 1, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 2      Mutex lock released by Thread  i = 1, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 3      Mutex lock released by Thread  i = 1, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 3      Mutex lock released by Thread  i = 1, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 4      Mutex lock released by Thread  i = 1, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 4      Mutex lock released by Thread  i = 1, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 5      Mutex lock released by Thread  i = 1, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 5      Mutex lock released by Thread  i = 1, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 6      Mutex lock released by Thread  i = 1, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 6      Mutex lock released by Thread  i = 1, k = 3 j = 6 
+Mutex lock acquired for writing by Thread  i = 1, k = 3 j = 6      Thread  i = 1, k = 3 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 7      Mutex lock released by Thread  i = 1, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 7      Mutex lock released by Thread  i = 1, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 8      Mutex lock released by Thread  i = 1, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 3 j = 8      Mutex lock released by Thread  i = 1, k = 3 j = 8 
+Thread Started : i = 2, k = 3 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 1      Mutex lock released by Thread  i = 2, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 1      Mutex lock released by Thread  i = 2, k = 3 j = 1 
+Thread Started : i = 7, k = 3 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 2      Mutex lock acquired by Thread  i = 7, k = 3 j = 1      Thread Started : i = 3, k = 3 
+Thread Started : i = 4, k = 3 
+Thread Started : i = 5, k = 3 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 1      Mutex lock released by Thread  i = 5, k = 3 j = 1 
+Mutex lock released by Thread  i = 2, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 1      Thread Started : i = 8, k = 3 
+Mutex lock released by Thread  i = 7, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 1      Mutex lock released by Thread  i = 7, k = 3 j = 1 
+Mutex lock released by Thread  i = 3, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 1      Mutex lock released by Thread  i = 3, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 1      Mutex lock released by Thread  i = 4, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 1      Mutex lock released by Thread  i = 4, k = 3 j = 1 
+Thread Started : i = 6, k = 3 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 2      Mutex lock released by Thread  i = 7, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 2      Mutex lock released by Thread  i = 7, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 3      Mutex lock released by Thread  i = 7, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 3      Mutex lock released by Thread  i = 7, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 4      Mutex lock released by Thread  i = 7, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 4      Mutex lock released by Thread  i = 7, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 5      Mutex lock acquired by Thread  i = 2, k = 3 j = 2      Mutex lock released by Thread  i = 7, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 5      Mutex lock released by Thread  i = 7, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 6      Mutex lock released by Thread  i = 7, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 6      Mutex lock released by Thread  i = 7, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 7      Mutex lock released by Thread  i = 7, k = 3 j = 7 
+Mutex lock released by Thread  i = 2, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 7      Mutex lock released by Thread  i = 7, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 8      Mutex lock released by Thread  i = 7, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 3 j = 8      Mutex lock released by Thread  i = 7, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 1      Mutex lock released by Thread  i = 5, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 2      Mutex lock released by Thread  i = 5, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 2      Mutex lock acquired by Thread  i = 3, k = 3 j = 2      Mutex lock released by Thread  i = 4, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 2      Mutex lock released by Thread  i = 4, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 1      Mutex lock released by Thread  i = 8, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 1      Mutex lock released by Thread  i = 8, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 2      Mutex lock released by Thread  i = 8, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 2      Mutex lock released by Thread  i = 8, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 3      Mutex lock acquired by Thread  i = 2, k = 3 j = 3      Mutex lock released by Thread  i = 8, k = 3 j = 3 
+Mutex lock released by Thread  i = 3, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 3      Mutex lock released by Thread  i = 2, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 3      Mutex lock released by Thread  i = 2, k = 3 j = 3 
+Mutex lock released by Thread  i = 4, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 4      Mutex lock released by Thread  i = 2, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 2      Mutex lock released by Thread  i = 5, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 3      Mutex lock released by Thread  i = 5, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 3      Mutex lock released by Thread  i = 5, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 4      Mutex lock released by Thread  i = 5, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 4      Mutex lock released by Thread  i = 5, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 5      Mutex lock released by Thread  i = 5, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 5      Mutex lock released by Thread  i = 5, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 6      Mutex lock released by Thread  i = 5, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 6      Mutex lock released by Thread  i = 5, k = 3 j = 6 
+Mutex lock acquired for writing by Thread  i = 5, k = 3 j = 6       Thread i = 5, k = 3 j = 6  -> waiting for writing !
+Mutex lock acquired by Thread  i = 3, k = 3 j = 2      Mutex lock released by Thread  i = 3, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 3      Mutex lock released by Thread  i = 3, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 3      Mutex lock released by Thread  i = 3, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 4      Mutex lock released by Thread  i = 3, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 4      Mutex lock released by Thread  i = 3, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 5      Mutex lock released by Thread  i = 3, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 5      Mutex lock released by Thread  i = 3, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 6      Mutex lock released by Thread  i = 3, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 6      Mutex lock released by Thread  i = 3, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 7      Mutex lock released by Thread  i = 3, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 7      Mutex lock released by Thread  i = 3, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 8      Mutex lock released by Thread  i = 3, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 3 j = 8      Mutex lock released by Thread  i = 3, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 1      Mutex lock released by Thread  i = 6, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 1      Mutex lock released by Thread  i = 6, k = 3 j = 1 
+Mutex lock acquired for writing by Thread  i = 6, k = 3 j = 1       Thread i = 6, k = 3 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 2, k = 3 j = 4      Mutex lock released by Thread  i = 2, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 5      Mutex lock released by Thread  i = 2, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 5      Mutex lock released by Thread  i = 2, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 6      Mutex lock released by Thread  i = 2, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 3      Mutex lock released by Thread  i = 8, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 4      Mutex lock released by Thread  i = 8, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 4      Mutex lock released by Thread  i = 8, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 5      Mutex lock released by Thread  i = 8, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 3      Mutex lock released by Thread  i = 4, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 4      Mutex lock released by Thread  i = 4, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 4      Mutex lock acquired by Thread  i = 2, k = 3 j = 6      Mutex lock released by Thread  i = 4, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 5      Mutex lock released by Thread  i = 2, k = 3 j = 6 
+Mutex lock released by Thread  i = 8, k = 3 j = 5 
+Thread  i = 5, k = 3 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 7      Mutex lock released by Thread  i = 5, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 7      Mutex lock released by Thread  i = 5, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 8      Mutex lock released by Thread  i = 5, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 3 j = 8      Thread  i = 6, k = 3 j = 1 writing ...
+Mutex lock released by Thread  i = 5, k = 3 j = 8 
+Mutex lock released after writing by Thread  i = 6, k = 3 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 2      Mutex lock released by Thread  i = 6, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 2      Mutex lock released by Thread  i = 6, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 5      Mutex lock released by Thread  i = 4, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 5      Mutex lock released by Thread  i = 4, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 6      Mutex lock released by Thread  i = 4, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 6      Mutex lock released by Thread  i = 4, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 7      Mutex lock released by Thread  i = 4, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 7      Mutex lock acquired for writing by Thread  i = 6, k = 3 j = 2      Thread  i = 6, k = 3 j = 2 writing ...
+Mutex lock acquired by Thread  i = 8, k = 3 j = 6      Mutex lock released by Thread  i = 8, k = 3 j = 6 
+Mutex lock released by Thread  i = 4, k = 3 j = 7 
+Mutex lock released after writing by Thread  i = 6, k = 3 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 6      Mutex lock released by Thread  i = 8, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 7      Mutex lock released by Thread  i = 8, k = 3 j = 7 
+Mutex lock acquired for writing by Thread  i = 2, k = 3 j = 6       Thread i = 2, k = 3 j = 6  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 3 j = 8      Mutex lock released by Thread  i = 4, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 3 j = 8      Mutex lock released by Thread  i = 4, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 3      Mutex lock released by Thread  i = 6, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 3      Mutex lock released by Thread  i = 6, k = 3 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 4      Mutex lock released by Thread  i = 6, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 4      Mutex lock released by Thread  i = 6, k = 3 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 5      Mutex lock released by Thread  i = 6, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 5      Mutex lock released by Thread  i = 6, k = 3 j = 5 
+Mutex lock acquired for writing by Thread  i = 6, k = 3 j = 5       Thread i = 6, k = 3 j = 5  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 3 j = 7      Mutex lock released by Thread  i = 8, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 8      Mutex lock released by Thread  i = 8, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 3 j = 8      Mutex lock released by Thread  i = 8, k = 3 j = 8 
+Thread  i = 2, k = 3 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 7      Mutex lock released by Thread  i = 2, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 7      Mutex lock released by Thread  i = 2, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 8      Mutex lock released by Thread  i = 2, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 3 j = 8      Mutex lock released by Thread  i = 2, k = 3 j = 8 
+Thread  i = 6, k = 3 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 3 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 6      Mutex lock released by Thread  i = 6, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 6      Mutex lock released by Thread  i = 6, k = 3 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 7      Mutex lock released by Thread  i = 6, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 7      Mutex lock released by Thread  i = 6, k = 3 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 8      Mutex lock released by Thread  i = 6, k = 3 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 3 j = 8      Mutex lock released by Thread  i = 6, k = 3 j = 8 
+Thread Started : i = 1, k = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 1      Mutex lock released by Thread  i = 1, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 1      Mutex lock released by Thread  i = 1, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 2      Mutex lock released by Thread  i = 1, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 2      Mutex lock released by Thread  i = 1, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 3      Mutex lock released by Thread  i = 1, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 3      Mutex lock released by Thread  i = 1, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 4      Mutex lock released by Thread  i = 1, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 4      Mutex lock released by Thread  i = 1, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 5      Thread Started : i = 2, k = 4 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 1      Mutex lock released by Thread  i = 2, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 1      Mutex lock released by Thread  i = 2, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 2      Mutex lock released by Thread  i = 2, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 2      Mutex lock released by Thread  i = 2, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 3      Mutex lock released by Thread  i = 2, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 3      Mutex lock released by Thread  i = 2, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 4      Mutex lock released by Thread  i = 2, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 4      Mutex lock released by Thread  i = 1, k = 4 j = 5 
+Mutex lock released by Thread  i = 2, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 5      Thread Started : i = 4, k = 4 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 5      Mutex lock released by Thread  i = 2, k = 4 j = 5 
+Thread Started : i = 3, k = 4 
+Mutex lock released by Thread  i = 1, k = 4 j = 5 
+Thread Started : i = 5, k = 4 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 1      Mutex lock released by Thread  i = 4, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 1      Mutex lock released by Thread  i = 4, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 2      Mutex lock released by Thread  i = 4, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 2      Mutex lock released by Thread  i = 4, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 5      Mutex lock released by Thread  i = 2, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 6      Mutex lock released by Thread  i = 2, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 6      Mutex lock released by Thread  i = 2, k = 4 j = 6 
+Mutex lock acquired for writing by Thread  i = 2, k = 4 j = 6      Thread  i = 2, k = 4 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 7      Mutex lock released by Thread  i = 2, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 7      Mutex lock released by Thread  i = 2, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 8      Mutex lock released by Thread  i = 2, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 4 j = 8      Mutex lock released by Thread  i = 2, k = 4 j = 8 
+Mutex lock acquired for writing by Thread  i = 2, k = 4 j = 8      Thread  i = 2, k = 4 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 4 j = 8 
+Thread Started : i = 7, k = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 6      Thread Started : i = 8, k = 4 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 1      Mutex lock released by Thread  i = 8, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 1      Mutex lock released by Thread  i = 1, k = 4 j = 6 
+Mutex lock released by Thread  i = 8, k = 4 j = 1 
+Thread Started : i = 6, k = 4 
+Mutex lock acquired for writing by Thread  i = 8, k = 4 j = 1       Thread i = 8, k = 4 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 4 j = 3      Mutex lock released by Thread  i = 4, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 3      Mutex lock released by Thread  i = 4, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 4      Mutex lock released by Thread  i = 4, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 4      Mutex lock released by Thread  i = 4, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 1      Mutex lock released by Thread  i = 7, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 1      Mutex lock released by Thread  i = 7, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 2      Mutex lock released by Thread  i = 7, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 2      Mutex lock released by Thread  i = 7, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 3      Mutex lock released by Thread  i = 7, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 3      Mutex lock released by Thread  i = 7, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 4      Mutex lock released by Thread  i = 7, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 4      Mutex lock released by Thread  i = 7, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 6      Mutex lock released by Thread  i = 1, k = 4 j = 6 
+Thread  i = 8, k = 4 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 8, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 1      Mutex lock acquired by Thread  i = 6, k = 4 j = 1      Mutex lock released by Thread  i = 5, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 1      Mutex lock released by Thread  i = 5, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 2      Mutex lock released by Thread  i = 5, k = 4 j = 2 
+Mutex lock released by Thread  i = 6, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 5      Mutex lock released by Thread  i = 4, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 5      Mutex lock released by Thread  i = 4, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 6      Mutex lock released by Thread  i = 4, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 6      Mutex lock released by Thread  i = 4, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 7      Mutex lock released by Thread  i = 4, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 7      Mutex lock released by Thread  i = 4, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 8      Mutex lock released by Thread  i = 4, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 4 j = 8      Mutex lock released by Thread  i = 4, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 1      Mutex lock released by Thread  i = 3, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 1      Mutex lock released by Thread  i = 3, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 2      Mutex lock released by Thread  i = 3, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 2      Mutex lock released by Thread  i = 3, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 3      Mutex lock released by Thread  i = 3, k = 4 j = 3 
+Mutex lock acquired for writing by Thread  i = 1, k = 4 j = 6       Thread i = 1, k = 4 j = 6  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 4 j = 2      Mutex lock released by Thread  i = 8, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 2      Mutex lock released by Thread  i = 8, k = 4 j = 2 
+Mutex lock acquired for writing by Thread  i = 8, k = 4 j = 2       Thread i = 8, k = 4 j = 2  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 4 j = 2      Mutex lock released by Thread  i = 5, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 3      Mutex lock released by Thread  i = 5, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 3      Mutex lock released by Thread  i = 5, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 4      Mutex lock released by Thread  i = 5, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 5      Mutex lock released by Thread  i = 7, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 5      Mutex lock released by Thread  i = 7, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 6      Mutex lock acquired by Thread  i = 6, k = 4 j = 1      Mutex lock released by Thread  i = 7, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 6      Mutex lock released by Thread  i = 7, k = 4 j = 6 
+Mutex lock released by Thread  i = 6, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 7      Mutex lock released by Thread  i = 7, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 7      Mutex lock released by Thread  i = 7, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 4 j = 8      Mutex lock released by Thread  i = 7, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 3      Mutex lock acquired by Thread  i = 5, k = 4 j = 4      Mutex lock released by Thread  i = 3, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 4      Mutex lock released by Thread  i = 3, k = 4 j = 4 
+Mutex lock released by Thread  i = 5, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 4      Mutex lock released by Thread  i = 3, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 5      Mutex lock released by Thread  i = 3, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 5      Mutex lock released by Thread  i = 3, k = 4 j = 5 
+Mutex lock acquired for writing by Thread  i = 6, k = 4 j = 1       Thread i = 6, k = 4 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 7, k = 4 j = 8      Mutex lock released by Thread  i = 7, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 5      Mutex lock released by Thread  i = 5, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 5      Mutex lock released by Thread  i = 5, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 6       Thread i = 8, k = 4 j = 2  -> waiting for writing !
+Mutex lock released by Thread  i = 5, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 6      Mutex lock released by Thread  i = 3, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 6      Mutex lock released by Thread  i = 3, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 6      Mutex lock released by Thread  i = 5, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 7      Mutex lock released by Thread  i = 5, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 7      Mutex lock released by Thread  i = 5, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 4 j = 8       Thread i = 8, k = 4 j = 2  -> waiting for writing !
+Mutex lock released by Thread  i = 5, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 7       Thread i = 1, k = 4 j = 6  -> waiting for writing !
+Mutex lock released by Thread  i = 3, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 7      Mutex lock released by Thread  i = 3, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 8      Mutex lock released by Thread  i = 3, k = 4 j = 8 
+ Thread i = 6, k = 4 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 4 j = 8      Mutex lock released by Thread  i = 5, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 4 j = 8      Mutex lock released by Thread  i = 3, k = 4 j = 8 
+Mutex lock acquired for writing by Thread  i = 3, k = 4 j = 8      Thread  i = 3, k = 4 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 4 j = 8 
+Thread  i = 8, k = 4 j = 2 writing ...
+Mutex lock released after writing by Thread  i = 8, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 3      Mutex lock released by Thread  i = 8, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 3      Mutex lock released by Thread  i = 8, k = 4 j = 3 
+Mutex lock acquired for writing by Thread  i = 8, k = 4 j = 3      Thread  i = 8, k = 4 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 8, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 4      Mutex lock released by Thread  i = 8, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 4      Mutex lock released by Thread  i = 8, k = 4 j = 4 
+Thread  i = 1, k = 4 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 7      Mutex lock released by Thread  i = 1, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 5      Mutex lock released by Thread  i = 8, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 5      Mutex lock released by Thread  i = 8, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 6      Mutex lock released by Thread  i = 8, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 6       Thread i = 6, k = 4 j = 1  -> waiting for writing !
+Mutex lock released by Thread  i = 8, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 7      Mutex lock released by Thread  i = 8, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 7      Mutex lock released by Thread  i = 8, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 8      Mutex lock released by Thread  i = 8, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 4 j = 8      Mutex lock released by Thread  i = 8, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 7      Mutex lock released by Thread  i = 1, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 8      Mutex lock released by Thread  i = 1, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 4 j = 8      Mutex lock released by Thread  i = 1, k = 4 j = 8 
+Thread  i = 6, k = 4 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 4 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 2      Mutex lock released by Thread  i = 6, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 2      Mutex lock released by Thread  i = 6, k = 4 j = 2 
+Mutex lock acquired for writing by Thread  i = 6, k = 4 j = 2      Thread  i = 6, k = 4 j = 2 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 4 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 3      Mutex lock released by Thread  i = 6, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 3      Mutex lock released by Thread  i = 6, k = 4 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 4      Mutex lock released by Thread  i = 6, k = 4 j = 4 
+Mutex lock acquired for writing by Thread  i = 1, k = 4 j = 8       Thread i = 1, k = 4 j = 8  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 4 j = 4      Mutex lock released by Thread  i = 6, k = 4 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 5      Mutex lock released by Thread  i = 6, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 5      Mutex lock released by Thread  i = 6, k = 4 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 6      Mutex lock released by Thread  i = 6, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 6      Mutex lock released by Thread  i = 6, k = 4 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 7      Mutex lock released by Thread  i = 6, k = 4 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 7      Mutex lock released by Thread  i = 6, k = 4 j = 7 
+Thread  i = 1, k = 4 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 8      Mutex lock released by Thread  i = 6, k = 4 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 4 j = 8      Mutex lock released by Thread  i = 6, k = 4 j = 8 
+Thread Started : i = 2, k = 5 
+Thread Started : i = 1, k = 5 
+Thread Started : i = 3, k = 5 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 1      Mutex lock released by Thread  i = 2, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 1      Thread Started : i = 4, k = 5 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 1      Mutex lock acquired by Thread  i = 4, k = 5 j = 1      Mutex lock released by Thread  i = 2, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 2      Mutex lock released by Thread  i = 2, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 2      Mutex lock released by Thread  i = 2, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 3      Mutex lock released by Thread  i = 2, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 3      Mutex lock released by Thread  i = 1, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 1      Mutex lock released by Thread  i = 1, k = 5 j = 1 
+Thread Started : i = 5, k = 5 
+Mutex lock released by Thread  i = 4, k = 5 j = 1 
+Mutex lock released by Thread  i = 2, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 2      Mutex lock released by Thread  i = 1, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 2      Mutex lock released by Thread  i = 1, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 3      Mutex lock released by Thread  i = 1, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 3      Thread Started : i = 6, k = 5 
+Mutex lock released by Thread  i = 1, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 1      Mutex lock released by Thread  i = 6, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 1      Mutex lock released by Thread  i = 6, k = 5 j = 1 
+Mutex lock acquired for writing by Thread  i = 6, k = 5 j = 1       Thread i = 6, k = 5 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 5 j = 1      Mutex lock acquired by Thread  i = 3, k = 5 j = 1      Mutex lock released by Thread  i = 5, k = 5 j = 1 
+Mutex lock acquired for writing by Thread  i = 1, k = 5 j = 3      Mutex lock released by Thread  i = 3, k = 5 j = 1 
+Thread Started : i = 7, k = 5 
+ Thread i = 1, k = 5 j = 3  -> waiting for writing !
+Thread Started : i = 8, k = 5 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 1      Mutex lock released by Thread  i = 8, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 1      Mutex lock released by Thread  i = 8, k = 5 j = 1 
+Mutex lock acquired for writing by Thread  i = 8, k = 5 j = 1       Thread i = 8, k = 5 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 5 j = 1      Mutex lock released by Thread  i = 5, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 2      Mutex lock released by Thread  i = 5, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 2      Mutex lock released by Thread  i = 5, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 3      Mutex lock acquired by Thread  i = 2, k = 5 j = 4      Mutex lock released by Thread  i = 5, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 3      Mutex lock released by Thread  i = 5, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 4      Mutex lock released by Thread  i = 5, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 4      Mutex lock released by Thread  i = 2, k = 5 j = 4 
+Mutex lock released by Thread  i = 5, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 1      Mutex lock released by Thread  i = 3, k = 5 j = 1 
+Mutex lock acquired for writing by Thread  i = 3, k = 5 j = 1       Thread i = 3, k = 5 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 7, k = 5 j = 1      Mutex lock released by Thread  i = 7, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 5      Mutex lock released by Thread  i = 5, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 5      Mutex lock released by Thread  i = 5, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 6      Mutex lock released by Thread  i = 5, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 6      Mutex lock released by Thread  i = 5, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 4      Mutex lock released by Thread  i = 2, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 5      Mutex lock released by Thread  i = 2, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 5      Mutex lock released by Thread  i = 2, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 6      Mutex lock acquired by Thread  i = 4, k = 5 j = 1      Mutex lock released by Thread  i = 2, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 6      Mutex lock released by Thread  i = 2, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 7      Mutex lock released by Thread  i = 2, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 7      Mutex lock released by Thread  i = 4, k = 5 j = 1 
+Mutex lock released by Thread  i = 2, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 1      Mutex lock released by Thread  i = 7, k = 5 j = 1 
+Thread  i = 6, k = 5 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 2      Mutex lock released by Thread  i = 6, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 2      Mutex lock released by Thread  i = 6, k = 5 j = 2 
+Thread  i = 1, k = 5 j = 3 writing ...
+Mutex lock acquired by Thread  i = 5, k = 5 j = 7      Mutex lock released after writing by Thread  i = 1, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 4      Mutex lock released by Thread  i = 5, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 7      Mutex lock released by Thread  i = 5, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 8      Mutex lock released by Thread  i = 1, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 4      Mutex lock released by Thread  i = 1, k = 5 j = 4 
+Mutex lock released by Thread  i = 5, k = 5 j = 8 
+Mutex lock acquired for writing by Thread  i = 7, k = 5 j = 1       Thread i = 7, k = 5 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 5 j = 3      Mutex lock released by Thread  i = 6, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 2      Mutex lock acquired by Thread  i = 1, k = 5 j = 5      Mutex lock released by Thread  i = 4, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 2      Mutex lock released by Thread  i = 4, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 3      Mutex lock released by Thread  i = 4, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 3      Mutex lock released by Thread  i = 1, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 5      Mutex lock released by Thread  i = 4, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 5 j = 8      Mutex lock released by Thread  i = 1, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 4      Mutex lock released by Thread  i = 4, k = 5 j = 4 
+Mutex lock released by Thread  i = 5, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 4      Mutex lock released by Thread  i = 4, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 5      Mutex lock released by Thread  i = 4, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 5      Mutex lock released by Thread  i = 4, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 8      Mutex lock released by Thread  i = 2, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 5 j = 8      Mutex lock released by Thread  i = 2, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 6      Mutex lock released by Thread  i = 1, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 6      Mutex lock released by Thread  i = 1, k = 5 j = 6 
+Mutex lock acquired for writing by Thread  i = 1, k = 5 j = 6       Thread i = 1, k = 5 j = 6  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 5 j = 6      Mutex lock released by Thread  i = 4, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 6      Mutex lock released by Thread  i = 4, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 7      Mutex lock released by Thread  i = 4, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 7      Mutex lock released by Thread  i = 4, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 8      Mutex lock released by Thread  i = 4, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 5 j = 8      Mutex lock released by Thread  i = 4, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 3      Mutex lock released by Thread  i = 6, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 4      Mutex lock released by Thread  i = 6, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 4      Mutex lock released by Thread  i = 6, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 5      Mutex lock released by Thread  i = 6, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 5      Thread  i = 3, k = 5 j = 1 writing ...
+Mutex lock released by Thread  i = 6, k = 5 j = 5 
+Mutex lock released after writing by Thread  i = 3, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 6       Thread i = 7, k = 5 j = 1  -> waiting for writing !
+Mutex lock released by Thread  i = 6, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 6      Mutex lock released by Thread  i = 6, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 2       Thread i = 1, k = 5 j = 6  -> waiting for writing !
+Mutex lock released by Thread  i = 3, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 2      Thread  i = 1, k = 5 j = 6 writing ...
+Mutex lock released by Thread  i = 3, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 3      Mutex lock released after writing by Thread  i = 1, k = 5 j = 6 
+Mutex lock released by Thread  i = 3, k = 5 j = 3 
+ Thread i = 8, k = 5 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 5 j = 7      Mutex lock released by Thread  i = 6, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 7      Mutex lock released by Thread  i = 6, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 5 j = 8      Mutex lock acquired by Thread  i = 1, k = 5 j = 7      Mutex lock released by Thread  i = 6, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 3      Mutex lock released by Thread  i = 1, k = 5 j = 7 
+Mutex lock released by Thread  i = 3, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 7      Mutex lock acquired by Thread  i = 6, k = 5 j = 8      Mutex lock released by Thread  i = 1, k = 5 j = 7 
+Mutex lock released by Thread  i = 6, k = 5 j = 8 
+Thread  i = 7, k = 5 j = 1 writing ...
+Mutex lock acquired for writing by Thread  i = 1, k = 5 j = 7      Thread  i = 1, k = 5 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 7, k = 5 j = 1 
+Mutex lock released after writing by Thread  i = 1, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 2      Mutex lock released by Thread  i = 7, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 2      Mutex lock acquired by Thread  i = 3, k = 5 j = 4       Thread i = 8, k = 5 j = 1  -> waiting for writing !
+Mutex lock released by Thread  i = 3, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 4      Mutex lock released by Thread  i = 7, k = 5 j = 2 
+Mutex lock released by Thread  i = 3, k = 5 j = 4 
+Thread  i = 8, k = 5 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 8, k = 5 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 3      Mutex lock acquired by Thread  i = 1, k = 5 j = 8      Mutex lock released by Thread  i = 7, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 3      Mutex lock released by Thread  i = 1, k = 5 j = 8 
+Mutex lock released by Thread  i = 7, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 5      Mutex lock released by Thread  i = 3, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 5      Mutex lock released by Thread  i = 3, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 2      Mutex lock released by Thread  i = 8, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 2      Mutex lock released by Thread  i = 8, k = 5 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 3      Mutex lock released by Thread  i = 8, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 3      Mutex lock released by Thread  i = 8, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 5 j = 8      Mutex lock released by Thread  i = 1, k = 5 j = 8 
+Mutex lock acquired for writing by Thread  i = 1, k = 5 j = 8      Thread  i = 1, k = 5 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 5 j = 8 
+Mutex lock acquired for writing by Thread  i = 7, k = 5 j = 3      Thread  i = 7, k = 5 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 7, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 4      Mutex lock released by Thread  i = 7, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 4      Mutex lock released by Thread  i = 7, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 5      Mutex lock released by Thread  i = 7, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 5      Mutex lock released by Thread  i = 7, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 6      Mutex lock released by Thread  i = 3, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 6      Mutex lock acquired for writing by Thread  i = 8, k = 5 j = 3      Thread  i = 8, k = 5 j = 3 writing ...
+Mutex lock released by Thread  i = 3, k = 5 j = 6 
+Mutex lock released after writing by Thread  i = 8, k = 5 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 7      Mutex lock released by Thread  i = 3, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 7      Mutex lock released by Thread  i = 3, k = 5 j = 7 
+Mutex lock acquired for writing by Thread  i = 3, k = 5 j = 7      Thread  i = 3, k = 5 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 6      Mutex lock released by Thread  i = 7, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 6      Mutex lock released by Thread  i = 7, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 4      Mutex lock released by Thread  i = 8, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 4      Mutex lock released by Thread  i = 8, k = 5 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 8      Mutex lock released by Thread  i = 3, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 5 j = 8      Mutex lock released by Thread  i = 3, k = 5 j = 8 
+Mutex lock acquired for writing by Thread  i = 3, k = 5 j = 8      Thread  i = 3, k = 5 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 7      Mutex lock released by Thread  i = 7, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 7      Mutex lock released by Thread  i = 7, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 5      Mutex lock released by Thread  i = 8, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 5      Mutex lock released by Thread  i = 8, k = 5 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 8      Mutex lock released by Thread  i = 7, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 5 j = 8      Mutex lock released by Thread  i = 7, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 6      Mutex lock released by Thread  i = 8, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 6      Mutex lock released by Thread  i = 8, k = 5 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 7      Mutex lock released by Thread  i = 8, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 7      Mutex lock released by Thread  i = 8, k = 5 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 8      Mutex lock released by Thread  i = 8, k = 5 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 5 j = 8      Mutex lock released by Thread  i = 8, k = 5 j = 8 
+Thread Started : i = 1, k = 6 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 1      Mutex lock released by Thread  i = 1, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 1      Mutex lock released by Thread  i = 1, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 2      Mutex lock released by Thread  i = 1, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 2      Mutex lock released by Thread  i = 1, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 3      Mutex lock released by Thread  i = 1, k = 6 j = 3 
+Thread Started : i = 2, k = 6 
+Thread Started : i = 3, k = 6 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 3      Mutex lock released by Thread  i = 1, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 4      Mutex lock released by Thread  i = 1, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 4      Thread Started : i = 4, k = 6 
+Mutex lock released by Thread  i = 1, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 1      Mutex lock released by Thread  i = 2, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 1      Mutex lock released by Thread  i = 2, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 2      Mutex lock released by Thread  i = 2, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 5      Mutex lock released by Thread  i = 1, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 5      Mutex lock released by Thread  i = 1, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 6      Mutex lock released by Thread  i = 1, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 6      Mutex lock acquired by Thread  i = 3, k = 6 j = 1      Mutex lock released by Thread  i = 1, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 7      Mutex lock released by Thread  i = 1, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 7      Thread Started : i = 5, k = 6 
+Mutex lock released by Thread  i = 3, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 1      Mutex lock released by Thread  i = 1, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 2      Mutex lock released by Thread  i = 2, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 1      Mutex lock acquired by Thread  i = 2, k = 6 j = 3      Mutex lock released by Thread  i = 2, k = 6 j = 3 
+Thread Started : i = 6, k = 6 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 3      Mutex lock released by Thread  i = 5, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 1      Mutex lock released by Thread  i = 5, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 2      Mutex lock released by Thread  i = 5, k = 6 j = 2 
+Mutex lock released by Thread  i = 4, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 1      Mutex lock released by Thread  i = 2, k = 6 j = 3 
+Mutex lock released by Thread  i = 3, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 4      Mutex lock released by Thread  i = 2, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 1      Thread Started : i = 7, k = 6 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 1      Mutex lock released by Thread  i = 6, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 6 j = 8      Mutex lock acquired by Thread  i = 5, k = 6 j = 2      Mutex lock acquired by Thread  i = 6, k = 6 j = 1      Mutex lock released by Thread  i = 1, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 1      Mutex lock released by Thread  i = 6, k = 6 j = 1 
+Mutex lock released by Thread  i = 4, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 2      Mutex lock acquired by Thread  i = 1, k = 6 j = 8      Mutex lock released by Thread  i = 5, k = 6 j = 2 
+Mutex lock released by Thread  i = 4, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 3      Mutex lock released by Thread  i = 7, k = 6 j = 1 
+Mutex lock released by Thread  i = 5, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 3      Mutex lock released by Thread  i = 5, k = 6 j = 3 
+Thread Started : i = 8, k = 6 
+Mutex lock released by Thread  i = 1, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 2      Mutex lock released by Thread  i = 6, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 2      Mutex lock released by Thread  i = 6, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 3      Mutex lock released by Thread  i = 6, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 2      Mutex lock released by Thread  i = 3, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 2      Mutex lock released by Thread  i = 3, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 3      Mutex lock released by Thread  i = 3, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 3      Mutex lock released by Thread  i = 3, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 4      Mutex lock released by Thread  i = 3, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 4      Mutex lock released by Thread  i = 3, k = 6 j = 4 
+Mutex lock acquired for writing by Thread  i = 3, k = 6 j = 4       Thread i = 3, k = 6 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 7, k = 6 j = 1      Mutex lock released by Thread  i = 7, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 2      Mutex lock released by Thread  i = 7, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 2      Mutex lock released by Thread  i = 7, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 4      Mutex lock released by Thread  i = 5, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 4      Mutex lock released by Thread  i = 5, k = 6 j = 4 
+Mutex lock acquired for writing by Thread  i = 5, k = 6 j = 4       Thread i = 5, k = 6 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 6 j = 1      Mutex lock released by Thread  i = 8, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 1      Mutex lock released by Thread  i = 8, k = 6 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 2      Mutex lock released by Thread  i = 8, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 2      Mutex lock released by Thread  i = 8, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 3      Mutex lock released by Thread  i = 8, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 3      Mutex lock released by Thread  i = 8, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 4      Mutex lock released by Thread  i = 8, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 4      Mutex lock released by Thread  i = 8, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 5      Mutex lock released by Thread  i = 8, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 5      Mutex lock released by Thread  i = 8, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 6      Mutex lock released by Thread  i = 8, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 6      Mutex lock acquired by Thread  i = 4, k = 6 j = 2      Mutex lock released by Thread  i = 8, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 7      Mutex lock released by Thread  i = 8, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 7      Mutex lock released by Thread  i = 8, k = 6 j = 7 
+Mutex lock released by Thread  i = 4, k = 6 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 3      Mutex lock released by Thread  i = 7, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 3      Mutex lock released by Thread  i = 7, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 4      Mutex lock released by Thread  i = 7, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 4      Mutex lock released by Thread  i = 7, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 4      Mutex lock released by Thread  i = 2, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 5      Mutex lock released by Thread  i = 2, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 5      Mutex lock released by Thread  i = 2, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 6      Mutex lock released by Thread  i = 2, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 6      Mutex lock released by Thread  i = 2, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 7      Mutex lock released by Thread  i = 2, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 7      Mutex lock released by Thread  i = 2, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 8      Mutex lock acquired by Thread  i = 6, k = 6 j = 3      Mutex lock released by Thread  i = 2, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 6 j = 8      Mutex lock released by Thread  i = 6, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 4      Mutex lock released by Thread  i = 6, k = 6 j = 4 
+Mutex lock released by Thread  i = 2, k = 6 j = 8 
+Mutex lock acquired for writing by Thread  i = 7, k = 6 j = 4       Thread i = 7, k = 6 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 6 j = 3      Mutex lock released by Thread  i = 4, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 3      Mutex lock released by Thread  i = 4, k = 6 j = 3 
+Mutex lock acquired for writing by Thread  i = 4, k = 6 j = 3       Thread i = 4, k = 6 j = 3  -> waiting for writing !
+ Thread i = 3, k = 6 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 6 j = 8      Mutex lock released by Thread  i = 8, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 6 j = 8      Mutex lock released by Thread  i = 8, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 4      Mutex lock released by Thread  i = 6, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 5      Mutex lock released by Thread  i = 6, k = 6 j = 5 
+ Thread i = 5, k = 6 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 6 j = 5      Mutex lock released by Thread  i = 6, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 6      Mutex lock released by Thread  i = 6, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 6      Mutex lock released by Thread  i = 6, k = 6 j = 6 
+Thread  i = 4, k = 6 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 6 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 4      Mutex lock released by Thread  i = 4, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 4      Mutex lock released by Thread  i = 4, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 5      Mutex lock released by Thread  i = 4, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 5      Mutex lock released by Thread  i = 4, k = 6 j = 5 
+Thread  i = 5, k = 6 j = 4 writing ...
+Thread  i = 7, k = 6 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 5      Mutex lock released after writing by Thread  i = 7, k = 6 j = 4 
+ Thread i = 3, k = 6 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 5, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 5      Mutex lock released by Thread  i = 7, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 5      Mutex lock released by Thread  i = 7, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 6      Mutex lock acquired by Thread  i = 6, k = 6 j = 7      Mutex lock released by Thread  i = 7, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 6      Mutex lock released by Thread  i = 7, k = 6 j = 6 
+Mutex lock released by Thread  i = 6, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 7      Mutex lock acquired by Thread  i = 5, k = 6 j = 5      Mutex lock released by Thread  i = 7, k = 6 j = 7 
+Mutex lock released by Thread  i = 5, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 7      Mutex lock released by Thread  i = 7, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 8      Mutex lock released by Thread  i = 7, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 6 j = 8      Mutex lock released by Thread  i = 7, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 7      Mutex lock released by Thread  i = 6, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 8      Mutex lock released by Thread  i = 6, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 6 j = 8      Mutex lock released by Thread  i = 6, k = 6 j = 8 
+Thread  i = 3, k = 6 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 6 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 5      Mutex lock released by Thread  i = 3, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 6      Mutex lock released by Thread  i = 5, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 6      Mutex lock released by Thread  i = 5, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 7      Mutex lock acquired for writing by Thread  i = 4, k = 6 j = 5       Thread i = 4, k = 6 j = 5  -> waiting for writing !
+Mutex lock released by Thread  i = 5, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 7      Mutex lock released by Thread  i = 5, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 8      Mutex lock released by Thread  i = 5, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 5      Mutex lock released by Thread  i = 3, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 6      Mutex lock released by Thread  i = 3, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 6 j = 8      Mutex lock released by Thread  i = 5, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 6      Mutex lock released by Thread  i = 3, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 7      Mutex lock released by Thread  i = 3, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 7      Mutex lock released by Thread  i = 3, k = 6 j = 7 
+Thread  i = 4, k = 6 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 6 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 6      Mutex lock released by Thread  i = 4, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 6      Mutex lock released by Thread  i = 4, k = 6 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 7      Mutex lock released by Thread  i = 4, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 7      Mutex lock released by Thread  i = 4, k = 6 j = 7 
+Mutex lock acquired for writing by Thread  i = 4, k = 6 j = 7      Thread  i = 4, k = 6 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 6 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 8      Mutex lock released by Thread  i = 4, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 8      Mutex lock released by Thread  i = 3, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 6 j = 8      Mutex lock released by Thread  i = 3, k = 6 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 6 j = 8      Mutex lock released by Thread  i = 4, k = 6 j = 8 
+Thread Started : i = 1, k = 7 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 1      Mutex lock released by Thread  i = 1, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 1      Mutex lock released by Thread  i = 1, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 2      Mutex lock released by Thread  i = 1, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 2      Mutex lock released by Thread  i = 1, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 3      Mutex lock released by Thread  i = 1, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 3      Mutex lock released by Thread  i = 1, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 4      Thread Started : i = 2, k = 7 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 1      Mutex lock released by Thread  i = 2, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 1      Mutex lock released by Thread  i = 2, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 2      Mutex lock released by Thread  i = 2, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 2      Mutex lock released by Thread  i = 2, k = 7 j = 2 
+Thread Started : i = 3, k = 7 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 3      Mutex lock released by Thread  i = 2, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 3      Mutex lock released by Thread  i = 1, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 1      Thread Started : i = 4, k = 7 
+Mutex lock released by Thread  i = 2, k = 7 j = 3 
+Thread Started : i = 5, k = 7 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 4      Mutex lock released by Thread  i = 3, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 1      Thread Started : i = 6, k = 7 
+Mutex lock released by Thread  i = 3, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 1      Mutex lock released by Thread  i = 1, k = 7 j = 4 
+Mutex lock acquired for writing by Thread  i = 1, k = 7 j = 4       Thread i = 1, k = 7 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 4, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 1      Thread Started : i = 7, k = 7 
+Thread  i = 1, k = 7 j = 4 writing ...
+Mutex lock released by Thread  i = 4, k = 7 j = 1 
+Mutex lock acquired for writing by Thread  i = 4, k = 7 j = 1      Thread  i = 4, k = 7 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 1, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 1      Mutex lock released after writing by Thread  i = 4, k = 7 j = 1 
+Mutex lock released by Thread  i = 5, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 1      Mutex lock released by Thread  i = 6, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 1      Thread Started : i = 8, k = 7 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 1      Mutex lock released by Thread  i = 6, k = 7 j = 1 
+Mutex lock acquired for writing by Thread  i = 6, k = 7 j = 1      Mutex lock released by Thread  i = 7, k = 7 j = 1 
+ Thread i = 6, k = 7 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 1, k = 7 j = 5      Mutex lock released by Thread  i = 1, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 5      Mutex lock released by Thread  i = 1, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 6      Mutex lock acquired by Thread  i = 3, k = 7 j = 2      Mutex lock released by Thread  i = 1, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 1      Mutex lock released by Thread  i = 3, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 6      Mutex lock released by Thread  i = 5, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 2      Mutex lock released by Thread  i = 1, k = 7 j = 6 
+Mutex lock released by Thread  i = 4, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 2      Mutex lock released by Thread  i = 5, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 2      Mutex lock released by Thread  i = 5, k = 7 j = 2 
+Mutex lock acquired for writing by Thread  i = 5, k = 7 j = 2       Thread i = 5, k = 7 j = 2  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 7 j = 1      Mutex lock released by Thread  i = 8, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 1      Mutex lock released by Thread  i = 8, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 2      Mutex lock released by Thread  i = 8, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 2      Mutex lock acquired by Thread  i = 4, k = 7 j = 2      Mutex lock released by Thread  i = 8, k = 7 j = 2 
+Mutex lock acquired for writing by Thread  i = 8, k = 7 j = 2       Thread i = 8, k = 7 j = 2  -> waiting for writing !
+Mutex lock released by Thread  i = 4, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 3      Mutex lock acquired by Thread  i = 7, k = 7 j = 1      Mutex lock released by Thread  i = 4, k = 7 j = 3 
+Mutex lock acquired for writing by Thread  i = 2, k = 7 j = 3       Thread i = 2, k = 7 j = 3  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 7 j = 3      Mutex lock released by Thread  i = 7, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 2      Mutex lock released by Thread  i = 7, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 2      Mutex lock released by Thread  i = 7, k = 7 j = 2 
+Mutex lock acquired for writing by Thread  i = 1, k = 7 j = 6       Thread i = 1, k = 7 j = 6  -> waiting for writing !
+Mutex lock released by Thread  i = 4, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 4      Mutex lock released by Thread  i = 4, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 4      Mutex lock released by Thread  i = 4, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 5      Mutex lock acquired by Thread  i = 3, k = 7 j = 2      Mutex lock released by Thread  i = 3, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 3      Mutex lock acquired for writing by Thread  i = 3, k = 7 j = 2      Mutex lock released by Thread  i = 7, k = 7 j = 3 
+Mutex lock released by Thread  i = 4, k = 7 j = 5 
+ Thread i = 3, k = 7 j = 2  -> waiting for writing !
+Mutex lock acquired by Thread  i = 7, k = 7 j = 3      Mutex lock released by Thread  i = 7, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 4      Mutex lock released by Thread  i = 7, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 4      Mutex lock released by Thread  i = 7, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 5      Mutex lock released by Thread  i = 7, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 5      Mutex lock released by Thread  i = 7, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 6      Mutex lock released by Thread  i = 7, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 6      Mutex lock released by Thread  i = 7, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 7      Mutex lock released by Thread  i = 7, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 5      Mutex lock released by Thread  i = 4, k = 7 j = 5 
+Mutex lock acquired for writing by Thread  i = 4, k = 7 j = 5       Thread i = 4, k = 7 j = 5  -> waiting for writing !
+Mutex lock acquired by Thread  i = 7, k = 7 j = 7      Mutex lock released by Thread  i = 7, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 8      Mutex lock released by Thread  i = 7, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 7 j = 8      Mutex lock released by Thread  i = 7, k = 7 j = 8 
+Thread  i = 6, k = 7 j = 1 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 7 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 2      Mutex lock released by Thread  i = 6, k = 7 j = 2 
+ Thread i = 5, k = 7 j = 2  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 7 j = 2      Mutex lock released by Thread  i = 6, k = 7 j = 2 
+Mutex lock acquired for writing by Thread  i = 6, k = 7 j = 2      Thread  i = 6, k = 7 j = 2 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 7 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 3      Mutex lock released by Thread  i = 6, k = 7 j = 3 
+ Thread i = 8, k = 7 j = 2  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 7 j = 3      Mutex lock released by Thread  i = 6, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 4      Mutex lock released by Thread  i = 6, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 4      Mutex lock released by Thread  i = 6, k = 7 j = 4 
+Thread  i = 2, k = 7 j = 3 writing ...
+Thread  i = 1, k = 7 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 7 j = 3 
+Mutex lock released after writing by Thread  i = 1, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 4      Mutex lock acquired by Thread  i = 1, k = 7 j = 7      Mutex lock released by Thread  i = 2, k = 7 j = 4 
+Mutex lock released by Thread  i = 1, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 5      Mutex lock released by Thread  i = 6, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 5      Mutex lock released by Thread  i = 6, k = 7 j = 5 
+Mutex lock acquired for writing by Thread  i = 6, k = 7 j = 5       Thread i = 6, k = 7 j = 5  -> waiting for writing !
+Mutex lock acquired by Thread  i = 2, k = 7 j = 4      Mutex lock released by Thread  i = 2, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 5      Mutex lock released by Thread  i = 2, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 5      Mutex lock released by Thread  i = 2, k = 7 j = 5 
+Mutex lock acquired for writing by Thread  i = 2, k = 7 j = 5       Thread i = 2, k = 7 j = 5  -> waiting for writing !
+Mutex lock acquired by Thread  i = 1, k = 7 j = 7      Mutex lock released by Thread  i = 1, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 8      Mutex lock released by Thread  i = 1, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 7 j = 8      Mutex lock released by Thread  i = 1, k = 7 j = 8 
+Thread  i = 3, k = 7 j = 2 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 7 j = 2 
+Thread  i = 4, k = 7 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 6      Mutex lock released by Thread  i = 4, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 6      Mutex lock released by Thread  i = 4, k = 7 j = 6 
+Thread  i = 5, k = 7 j = 2 writing ...
+Mutex lock acquired by Thread  i = 3, k = 7 j = 3      Mutex lock released after writing by Thread  i = 5, k = 7 j = 2 
+Mutex lock released by Thread  i = 3, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 3      Mutex lock acquired by Thread  i = 3, k = 7 j = 3      Mutex lock released by Thread  i = 5, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 7      Mutex lock released by Thread  i = 3, k = 7 j = 3 
+Mutex lock released by Thread  i = 4, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 4      Mutex lock released by Thread  i = 3, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 4      Mutex lock released by Thread  i = 3, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 5      Mutex lock released by Thread  i = 3, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 5      Mutex lock released by Thread  i = 3, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 3      Mutex lock released by Thread  i = 5, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 4      Mutex lock released by Thread  i = 5, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 4      Mutex lock released by Thread  i = 5, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 7      Mutex lock released by Thread  i = 4, k = 7 j = 7 
+Thread  i = 8, k = 7 j = 2 writing ...
+Mutex lock acquired by Thread  i = 3, k = 7 j = 6      Mutex lock released after writing by Thread  i = 8, k = 7 j = 2 
+Mutex lock released by Thread  i = 3, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 3      Mutex lock acquired by Thread  i = 4, k = 7 j = 8      Mutex lock released by Thread  i = 8, k = 7 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 3      Mutex lock released by Thread  i = 8, k = 7 j = 3 
+Mutex lock released by Thread  i = 4, k = 7 j = 8 
+Mutex lock acquired for writing by Thread  i = 5, k = 7 j = 4       Thread i = 5, k = 7 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 7 j = 4      Mutex lock released by Thread  i = 8, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 4      Mutex lock released by Thread  i = 8, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 7 j = 8      Mutex lock released by Thread  i = 4, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 6      Mutex lock released by Thread  i = 3, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 7      Mutex lock released by Thread  i = 3, k = 7 j = 7 
+ Thread i = 6, k = 7 j = 5  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 7 j = 5      Mutex lock released by Thread  i = 8, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 5      Mutex lock released by Thread  i = 8, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 6      Mutex lock released by Thread  i = 8, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 6      Mutex lock released by Thread  i = 8, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 7      Mutex lock released by Thread  i = 3, k = 7 j = 7 
+Thread  i = 2, k = 7 j = 5 writing ...
+Mutex lock acquired by Thread  i = 8, k = 7 j = 7      Mutex lock released by Thread  i = 8, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 8      Mutex lock released by Thread  i = 3, k = 7 j = 8 
+Mutex lock released after writing by Thread  i = 2, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 7      Mutex lock released by Thread  i = 8, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 8      Mutex lock released by Thread  i = 8, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 7 j = 8      Mutex lock released by Thread  i = 8, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 7 j = 8      Mutex lock released by Thread  i = 3, k = 7 j = 8 
+Thread  i = 5, k = 7 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 7 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 6      Mutex lock released by Thread  i = 2, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 6      Mutex lock released by Thread  i = 2, k = 7 j = 6 
+Thread  i = 6, k = 7 j = 5 writing ...
+Mutex lock released after writing by Thread  i = 6, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 5      Mutex lock released by Thread  i = 5, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 5      Mutex lock released by Thread  i = 5, k = 7 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 6      Mutex lock released by Thread  i = 5, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 6      Mutex lock released by Thread  i = 5, k = 7 j = 6 
+Mutex lock acquired for writing by Thread  i = 2, k = 7 j = 6      Thread  i = 2, k = 7 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 7      Mutex lock released by Thread  i = 2, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 7      Mutex lock released by Thread  i = 2, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 8      Mutex lock acquired by Thread  i = 6, k = 7 j = 6      Mutex lock released by Thread  i = 2, k = 7 j = 8 
+Mutex lock released by Thread  i = 6, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 7 j = 8      Mutex lock released by Thread  i = 2, k = 7 j = 8 
+Mutex lock acquired for writing by Thread  i = 2, k = 7 j = 8       Thread i = 2, k = 7 j = 8  -> waiting for writing !
+Mutex lock acquired for writing by Thread  i = 5, k = 7 j = 6       Thread i = 5, k = 7 j = 6  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 7 j = 6      Mutex lock released by Thread  i = 6, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 7      Mutex lock released by Thread  i = 6, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 7      Mutex lock released by Thread  i = 6, k = 7 j = 7 
+Thread  i = 5, k = 7 j = 6 writing ...
+Mutex lock released after writing by Thread  i = 5, k = 7 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 7      Mutex lock released by Thread  i = 5, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 8      Mutex lock released by Thread  i = 6, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 7 j = 8      Mutex lock released by Thread  i = 6, k = 7 j = 8 
+ Thread i = 2, k = 7 j = 8  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 7 j = 7      Mutex lock released by Thread  i = 5, k = 7 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 8      Mutex lock released by Thread  i = 5, k = 7 j = 8 
+Mutex lock acquired by Thread  i = 5, k = 7 j = 8      Mutex lock released by Thread  i = 5, k = 7 j = 8 
+Thread  i = 2, k = 7 j = 8 writing ...
+Mutex lock released after writing by Thread  i = 2, k = 7 j = 8 
+Thread Started : i = 1, k = 8 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 1      Mutex lock released by Thread  i = 1, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 1      Mutex lock released by Thread  i = 1, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 2      Mutex lock released by Thread  i = 1, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 2      Mutex lock released by Thread  i = 1, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 3      Mutex lock released by Thread  i = 1, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 3      Mutex lock released by Thread  i = 1, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 4      Thread Started : i = 2, k = 8 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 1      Mutex lock released by Thread  i = 2, k = 8 j = 1 
+Thread Started : i = 3, k = 8 
+Thread Started : i = 4, k = 8 
+Mutex lock released by Thread  i = 1, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 1      Mutex lock released by Thread  i = 2, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 2      Mutex lock released by Thread  i = 2, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 2      Mutex lock released by Thread  i = 2, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 3      Mutex lock released by Thread  i = 2, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 1      Thread Started : i = 5, k = 8 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 1      Mutex lock released by Thread  i = 5, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 1      Mutex lock released by Thread  i = 5, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 2      Mutex lock released by Thread  i = 5, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 1      Mutex lock released by Thread  i = 3, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 4      Mutex lock acquired by Thread  i = 3, k = 8 j = 1      Mutex lock released by Thread  i = 3, k = 8 j = 1 
+Mutex lock released by Thread  i = 1, k = 8 j = 4 
+Mutex lock released by Thread  i = 4, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 2      Mutex lock released by Thread  i = 3, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 2      Mutex lock released by Thread  i = 3, k = 8 j = 2 
+Thread Started : i = 6, k = 8 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 3      Mutex lock released by Thread  i = 3, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 3      Mutex lock released by Thread  i = 3, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 4      Mutex lock released by Thread  i = 3, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 4      Mutex lock acquired by Thread  i = 2, k = 8 j = 3      Mutex lock released by Thread  i = 3, k = 8 j = 4 
+Mutex lock acquired for writing by Thread  i = 3, k = 8 j = 4       Thread i = 3, k = 8 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 2, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 4      Mutex lock acquired for writing by Thread  i = 1, k = 8 j = 4       Thread i = 1, k = 8 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 2, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 1      Mutex lock acquired by Thread  i = 5, k = 8 j = 2      Thread Started : i = 7, k = 8 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 1      Mutex lock released by Thread  i = 5, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 4      Mutex lock released by Thread  i = 7, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 3      Mutex lock released by Thread  i = 2, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 1      Mutex lock released by Thread  i = 5, k = 8 j = 3 
+Mutex lock released by Thread  i = 4, k = 8 j = 1 
+Mutex lock released by Thread  i = 6, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 5      Mutex lock released by Thread  i = 2, k = 8 j = 5 
+Thread Started : i = 8, k = 8 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 5      Mutex lock released by Thread  i = 2, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 6      Mutex lock released by Thread  i = 2, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 6      Mutex lock released by Thread  i = 2, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 7      Mutex lock released by Thread  i = 2, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 3      Mutex lock released by Thread  i = 5, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 4      Mutex lock released by Thread  i = 5, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 4      Mutex lock released by Thread  i = 5, k = 8 j = 4 
+Mutex lock acquired for writing by Thread  i = 4, k = 8 j = 1       Thread i = 4, k = 8 j = 1  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 8 j = 1      Mutex lock released by Thread  i = 6, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 2      Mutex lock released by Thread  i = 6, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 2      Mutex lock released by Thread  i = 6, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 3      Mutex lock released by Thread  i = 6, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 1      Mutex lock released by Thread  i = 7, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 2      Mutex lock released by Thread  i = 7, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 1      Mutex lock released by Thread  i = 8, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 1      Mutex lock released by Thread  i = 8, k = 8 j = 1 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 7      Mutex lock released by Thread  i = 2, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 8      Mutex lock released by Thread  i = 2, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 2, k = 8 j = 8      Mutex lock released by Thread  i = 2, k = 8 j = 8 
+Mutex lock acquired for writing by Thread  i = 5, k = 8 j = 4       Thread i = 5, k = 8 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 8 j = 3      Mutex lock released by Thread  i = 6, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 4      Mutex lock released by Thread  i = 6, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 2      Mutex lock released by Thread  i = 7, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 3      Mutex lock released by Thread  i = 7, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 2      Mutex lock released by Thread  i = 8, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 2      Mutex lock released by Thread  i = 8, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 3      Mutex lock released by Thread  i = 8, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 3      Mutex lock released by Thread  i = 8, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 4      Mutex lock acquired by Thread  i = 6, k = 8 j = 4      Mutex lock released by Thread  i = 8, k = 8 j = 4 
+Mutex lock released by Thread  i = 6, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 4      Mutex lock acquired by Thread  i = 7, k = 8 j = 3      Mutex lock released by Thread  i = 8, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 5      Mutex lock released by Thread  i = 6, k = 8 j = 5 
+ Thread i = 3, k = 8 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 8 j = 5      Mutex lock released by Thread  i = 7, k = 8 j = 3 
+Mutex lock released by Thread  i = 6, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 6       Thread i = 1, k = 8 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 6, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 4      Mutex lock released by Thread  i = 7, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 4      Mutex lock released by Thread  i = 7, k = 8 j = 4 
+Mutex lock acquired for writing by Thread  i = 7, k = 8 j = 4       Thread i = 7, k = 8 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 6, k = 8 j = 6      Mutex lock released by Thread  i = 6, k = 8 j = 6 
+Thread  i = 4, k = 8 j = 1 writing ...
+Mutex lock acquired by Thread  i = 8, k = 8 j = 5      Mutex lock released after writing by Thread  i = 4, k = 8 j = 1 
+Mutex lock released by Thread  i = 8, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 2      Mutex lock acquired by Thread  i = 6, k = 8 j = 7      Mutex lock released by Thread  i = 4, k = 8 j = 2 
+Mutex lock released by Thread  i = 6, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 2      Mutex lock acquired by Thread  i = 8, k = 8 j = 5      Mutex lock released by Thread  i = 4, k = 8 j = 2 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 7      Mutex lock released by Thread  i = 8, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 6      Mutex lock released by Thread  i = 8, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 6      Mutex lock released by Thread  i = 6, k = 8 j = 7 
+Mutex lock released by Thread  i = 8, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 7      Mutex lock acquired by Thread  i = 6, k = 8 j = 8      Mutex lock released by Thread  i = 8, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 7      Mutex lock released by Thread  i = 8, k = 8 j = 7 
+ Thread i = 3, k = 8 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 6, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 6, k = 8 j = 8      Mutex lock acquired by Thread  i = 4, k = 8 j = 3      Mutex lock released by Thread  i = 6, k = 8 j = 8 
+Mutex lock released by Thread  i = 4, k = 8 j = 3 
+ Thread i = 5, k = 8 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 8, k = 8 j = 8       Thread i = 3, k = 8 j = 4  -> waiting for writing !
+Mutex lock released by Thread  i = 8, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 8, k = 8 j = 8      Mutex lock released by Thread  i = 8, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 3      Mutex lock released by Thread  i = 4, k = 8 j = 3 
+Mutex lock acquired for writing by Thread  i = 4, k = 8 j = 3      Thread  i = 4, k = 8 j = 3 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 8 j = 3 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 4      Mutex lock released by Thread  i = 4, k = 8 j = 4 
+ Thread i = 7, k = 8 j = 4  -> waiting for writing !
+Mutex lock acquired by Thread  i = 4, k = 8 j = 4      Mutex lock released by Thread  i = 4, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 5      Mutex lock released by Thread  i = 4, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 5      Mutex lock released by Thread  i = 4, k = 8 j = 5 
+Mutex lock acquired for writing by Thread  i = 4, k = 8 j = 5      Thread  i = 4, k = 8 j = 5 writing ...
+Thread  i = 1, k = 8 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 4, k = 8 j = 5 
+Thread  i = 5, k = 8 j = 4 writing ...
+Mutex lock acquired by Thread  i = 4, k = 8 j = 6      Mutex lock released after writing by Thread  i = 1, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 5      Mutex lock released after writing by Thread  i = 5, k = 8 j = 4 
+Mutex lock released by Thread  i = 1, k = 8 j = 5 
+Mutex lock released by Thread  i = 4, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 5      Mutex lock released by Thread  i = 5, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 5      Mutex lock released by Thread  i = 5, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 6      Mutex lock released by Thread  i = 5, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 5      Mutex lock released by Thread  i = 1, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 6      Mutex lock released by Thread  i = 1, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 6      Mutex lock released by Thread  i = 1, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 7      Mutex lock released by Thread  i = 1, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 7      Mutex lock released by Thread  i = 1, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 8      Mutex lock released by Thread  i = 1, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 1, k = 8 j = 8      Mutex lock released by Thread  i = 1, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 6      Mutex lock released by Thread  i = 4, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 7      Mutex lock released by Thread  i = 4, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 6      Mutex lock released by Thread  i = 5, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 7      Mutex lock released by Thread  i = 5, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 7      Mutex lock released by Thread  i = 5, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 5, k = 8 j = 8      Mutex lock released by Thread  i = 5, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 7      Mutex lock released by Thread  i = 4, k = 8 j = 7 
+Mutex lock acquired for writing by Thread  i = 4, k = 8 j = 7       Thread i = 4, k = 8 j = 7  -> waiting for writing !
+Mutex lock acquired by Thread  i = 5, k = 8 j = 8      Mutex lock released by Thread  i = 5, k = 8 j = 8 
+Thread  i = 3, k = 8 j = 4 writing ...
+Mutex lock released after writing by Thread  i = 3, k = 8 j = 4 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 5      Mutex lock released by Thread  i = 3, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 5      Mutex lock released by Thread  i = 3, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 6      Mutex lock released by Thread  i = 3, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 6      Mutex lock released by Thread  i = 3, k = 8 j = 6 
+Thread  i = 7, k = 8 j = 4 writing ...
+Thread  i = 4, k = 8 j = 7 writing ...
+Mutex lock released after writing by Thread  i = 7, k = 8 j = 4 
+Mutex lock released after writing by Thread  i = 4, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 5      Mutex lock acquired by Thread  i = 3, k = 8 j = 7      Mutex lock released by Thread  i = 7, k = 8 j = 5 
+Mutex lock released by Thread  i = 3, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 5      Mutex lock released by Thread  i = 7, k = 8 j = 5 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 6      Mutex lock released by Thread  i = 7, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 8      Mutex lock released by Thread  i = 4, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 4, k = 8 j = 8      Mutex lock released by Thread  i = 4, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 7      Mutex lock released by Thread  i = 3, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 8      Mutex lock released by Thread  i = 3, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 3, k = 8 j = 8      Mutex lock released by Thread  i = 3, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 6      Mutex lock released by Thread  i = 7, k = 8 j = 6 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 7      Mutex lock released by Thread  i = 7, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 7      Mutex lock released by Thread  i = 7, k = 8 j = 7 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 8      Mutex lock released by Thread  i = 7, k = 8 j = 8 
+Mutex lock acquired by Thread  i = 7, k = 8 j = 8      Mutex lock released by Thread  i = 7, k = 8 j = 8 
+
+
+Following is the FINAL dist matrix (-1 --> Infinity) : 
+  0   5   4  10   3   8   4   7 
+  5   0   6   9   5   8   4   8 
+  4   6   0   8   1   6   2   5 
+ 10   9   8   0   7   4   7   3 
+  3   5   1   7   0   5   1   4 
+  8   8   6   4   5   0   4   5 
+  4   4   2   7   1   4   0   4 
+  7   8   5   3   4   5   4   0 

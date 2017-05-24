@@ -1,0 +1,19 @@
+Response Time for PID <5138> : seconds = 0.000000/useconds = 93.000000 
+Turnaround Time for PID <5138> : seconds = 2989.000000
+Total Wait Time for PID <5138> : seconds = 0.000000/useconds = 293891.000000
+
+Response Time for PID <5142> : seconds = 0.000000/useconds = 117.000000 
+Turnaround Time for PID <5142> : seconds = 2964.000000
+Total Wait Time for PID <5142> : seconds = 0.000000/useconds = 253212.000000
+
+Response Time for PID <5147> : seconds = 0.000000/useconds = 45.000000 
+Turnaround Time for PID <5147> : seconds = 8347.000000
+Total Wait Time for PID <5147> : seconds = 1.000000/useconds = -681301.000000
+
+Response Time for PID <5151> : seconds = 0.000000/useconds = 206.000000 
+Turnaround Time for PID <5151> : seconds = 8281.000000
+Total Wait Time for PID <5151> : seconds = 1.000000/useconds = -683375.000000
+
+Average Response Time : useconds = 115.25
+Average Turnaround Time : seconds = 5645.25
+Average Wait Time : seconds : 0.636775
